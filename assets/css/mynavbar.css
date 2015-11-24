@@ -10,14 +10,7 @@
 	margin:0 20px;
 	vertical-align:middle;
 }
-.mynavbar .nav li a {
-	border-radius:10px;
-	background:orange;
-	color:#fff;
-}
-.mynavbar .nav li a:hover {
-	background:red
-}
+
 
 .navbar-brand {
 	display:none
@@ -30,9 +23,5 @@
 	display:block;
 	margin:0
 }
-.mynavbar .nav li a {
-	border-radius:0;
-	display:block;
-	border-bottom:1px solid #fff
-}
+
 }
