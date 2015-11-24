@@ -1,0 +1,38 @@
+.mynavbar {
+	text-align:center;
+}
+.mynavbar .nav {
+	float:none;
+}
+.mynavbar .nav li {
+	display:inline-block;
+	float:none;
+	margin:0 20px;
+	vertical-align:middle;
+}
+.mynavbar .nav li a {
+	border-radius:10px;
+	background:orange;
+	color:#fff;
+}
+.mynavbar .nav li a:hover {
+	background:red
+}
+
+.navbar-brand {
+	display:none
+}
+ @media screen and (max-width:768px) {
+.navbar-brand {
+	display:inline
+}
+.mynavbar .nav li {
+	display:block;
+	margin:0
+}
+.mynavbar .nav li a {
+	border-radius:0;
+	display:block;
+	border-bottom:1px solid #fff
+}
+}
