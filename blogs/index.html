@@ -4,7 +4,7 @@ title: Blogs
 ---
 <h2>{{ page.title }}</h2>
 {% for post in site.posts %}
-<a href="{{ post.url }}">
+<a href="blogs/{{ post.url }}">
 {{ post.title }}
 </a>
 {% endfor %}
