@@ -12,7 +12,7 @@ body {
 /* menu center */
 
 @media (min-width: 768px) {
-	.navbar-brand,
+    .navbar .navbar-brand,
     .navbar .navbar-nav {
         display: inline-block;
         float: none;
