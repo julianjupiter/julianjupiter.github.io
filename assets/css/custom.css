@@ -11,6 +11,9 @@ body {
 
 /* menu center */
 @media (min-width: 768px){
+	.navbar-brand {
+		margin-right: 0 auto;
+	}
     .navbar-nav{
         margin: 0 auto;
         display: table;
