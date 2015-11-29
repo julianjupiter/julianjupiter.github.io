@@ -10,21 +10,15 @@ body {
 }
 
 /* menu center */
-
-@media (min-width: 768px) {
-    .navbar .navbar-brand {
-    	display: none;
-    }
-    .navbar .navbar-nav {
-        display: inline-block;
-        float: none;
-        vertical-align: top;
-    }
-
-    .navbar .navbar-collapse {
-        text-align: center;
+@media (min-width: 768px){
+    .navbar-nav{
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+        float:none;
     }
 }
+
 
 /* menu settings */
 
