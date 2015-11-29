@@ -1,0 +1,11 @@
+.jumbotron {
+  padding-top: -20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+/* Customize container */
+@media (min-width: 768px) {
+  #blogs {
+    max-width: 730px;
+  }
+}
