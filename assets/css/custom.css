@@ -4,13 +4,15 @@ html {
 }
 
 body {
-  padding-top: 70px;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
 #top {
-	padding-top: 50px;
-	padding-bottm: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #CC4037;
+    text-align: center;
+    text-color: #fff;
 }
 /* menu center */
 @media (min-width: 768px) {
