@@ -12,7 +12,7 @@ body {
     padding-bottom: 25px;
     background-color: #CC4037;
     text-align: center;
-    text-color: #fff;
+    color: #fff;
 }
 /* menu center */
 @media (min-width: 768px) {
