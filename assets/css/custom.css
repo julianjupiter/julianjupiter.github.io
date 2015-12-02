@@ -41,6 +41,7 @@ body {
 .navbar-default {
     background-color: #CC4037;
     border-color: #CC4037;
+    border-radius: 0px;
 }
 
 .navbar-default .navbar-brand {
