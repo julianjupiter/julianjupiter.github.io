@@ -15,7 +15,6 @@ title: Blogs
       <h2>{{ post.title }}</h2>
       <p><info datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }} <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.url}}"></a></info></p>
       <p><a class="btn btn-default" href="{{ post.url }}" role="button">Read me &raquo;</a></p>
-      <span class="disqus-comment-count" data-disqus-identifier="{{ post.url }}#disqus_thread">First article</span>
       {% endfor %}
     </div>
   </div>
