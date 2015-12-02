@@ -8,17 +8,16 @@ title: Blogs
     <p>Welcome to my blog!</p>
   </div>
 </div>
-<div id="blogs-container" class="container">
+<div class="container">
+  {% for post in site.posts %}
   <div class="row">
-    <div class="col-md-12">
-      {% for post in site.posts %}
+    <div class="col-sm-8 col-sm-offset-2">
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
       <p><info datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }} <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.url}}"></a></info></p>
       <p><a class="btn btn-default" href="{{ post.url }}" role="button">Read me &raquo;</a></p>
-      <hr>
-      {% endfor %}
     </div>
   </div>
+  {% endfor %}
   <div class="row">
     <div class="col-sm-12">
       <hr>
