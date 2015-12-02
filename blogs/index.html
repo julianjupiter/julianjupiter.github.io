@@ -14,7 +14,7 @@ title: Blogs
       {% for post in site.posts %}
       <h2>{{ post.title }}</h2>
       <p><a class="btn btn-default" href="{{ post.url }}" role="button">Read me &raquo;</a></p>
-      <p><a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a></p>
+      <p><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.url}}"></a></p>
       {% endfor %}
     </div>
   </div>
