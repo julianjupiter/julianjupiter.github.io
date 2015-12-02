@@ -2,9 +2,13 @@ html {
   position: relative;
   min-height: 100%;
 }
+@font-face {
+    font-family: Gabriela;
+    src: url(/assets/fonts/Gabriela.ttf);
 
 body {
   /* Margin bottom by footer height */
+  font-family: Gabriela;
   margin-bottom: 60px;
 }
 #top {
