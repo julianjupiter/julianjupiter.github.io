@@ -15,6 +15,8 @@ title: Blogs
       <h2>{{ post.title }}</h2>
       <p><a class="btn btn-default" href="{{ post.url }}" role="button">Read me &raquo;</a></p>
       <p><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.url}}"></a></p>
+            <a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{page.url}}"></a>
+            <span class="disqus-comment-count" data-disqus-identifier="{{page.url}}">First article</span>
       {% endfor %}
     </div>
   </div>
