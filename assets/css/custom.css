@@ -11,10 +11,10 @@ body {
   font-family: 'Ubuntu', 'Lato', serif;
   margin-bottom: 60px;
 }
-#blogs-top {
+#top {
     padding-top: 25px;
     padding-bottom: 25px;
-    background-color: #d9edf7;
+    background-color: #CC4037;
     text-align: center;
     color: #fff;
 }
