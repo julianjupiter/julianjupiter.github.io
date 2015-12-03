@@ -5,9 +5,3 @@
   padding-bottom: 30px;
   text-align: center;
 }
-/* Customize container */
-@media (min-width: 768px) {
-  #blogs-container {
-    max-width: 730px;
-  }
-}
