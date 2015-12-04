@@ -14,7 +14,7 @@ body {
 #top {
     padding-top: 25px;
     padding-bottom: 25px;
-    background-color: #CC4037;
+    background-color: #337ab7;
     text-align: center;
     color: #fff;
 }
@@ -48,8 +48,8 @@ body {
 /* navbar settings */
 
 .navbar-default {
-    background-color: #CC4037;
-    border-color: #CC4037;
+    background-color: #337ab7;
+    border-color: #337ab7;
     border-radius: 0px;
 }
 
