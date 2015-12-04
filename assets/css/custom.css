@@ -127,8 +127,10 @@ body {
 }
 
 /* end navbar settings */
+
+/* footer settings */
 footer {
-    color: #FFF;
+    color: #gray;
     position: absolute;
     bottom: 0px;
     width: 100%;
