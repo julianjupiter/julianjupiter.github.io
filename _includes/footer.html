@@ -2,10 +2,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="text-muted">The contents of this website are &copy;&nbsp;{{ site.time | date: '%Y' }} Julian V. Jupiter under the terms of the GNU General Public License v3.0.
+				<p class="copyright">
+					The contents of this website are &copy;&nbsp;{{ site.time | date: '%Y' }} Julian V. Jupiter under the terms of the GNU General Public License v3.0. | Proudly hosted by <a href="https://github.com">GitHub</a>
 				<span class="pull-right"><a href="#" class="scrollToTop">Top <span class="dropup"><span class="caret"></span></span></a></span>
         			</p>
-        			Proudly hosted by <a href="https://github.com">GitHub</a> 
 			</div>
 		</div>
 	</div>
@@ -21,7 +21,7 @@ $(function () {
 
     $(window).scroll(function () {
         if ($(window).scrollTop() > stickyHeaderTop) {
-            $("nav").attr("class", "navbar navbar-default navbar-fixed-top");
+            $("nav").attr("class", "navbar navbar-default");
             $(".navbar-right").css("margin-right", "-15px");
             $(".navbar-right").css("float", "right!important");
 
