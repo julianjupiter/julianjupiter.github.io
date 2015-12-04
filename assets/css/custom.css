@@ -127,20 +127,19 @@ body {
 }
 
 /* end navbar settings */
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #fff;
+footer {
+    color: #FFF;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: #FFFFE0;
 }
 
-.footer .container {
+footer .container {
 	text-align: center;
 }
 
-.container .text-muted {
+.container .copyright {
   margin: 20px 0;
 }
