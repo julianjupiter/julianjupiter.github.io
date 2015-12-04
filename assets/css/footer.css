@@ -1,0 +1,17 @@
+/* footer settings */
+footer {
+    color: #gray;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: #CC4037;
+}
+
+footer .container {
+	text-align: center;
+}
+
+.container .copyright {
+  margin: 20px 0;
+}
