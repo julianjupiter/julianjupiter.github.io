@@ -10,12 +10,14 @@ title: Home
   </div>
   <div class="row">
     <div class="col-sm-4">
-      <div class="panel panel-primary">
+      <!--<div class="panel panel-primary">
         <div class="panel-heading">Latest Blogs</div>
         <div class="panel-body">
           {% for post in site.posts limit:5 %}<p><a href="{{ post.url }}">{{ post.title }}</a></p>{% endfor %}
         </div>
-      </div>
+      </div>-->
+      <h3 style="border-bottom:2px solid gray">Latest Blogs</h3>
+      {% for post in site.posts limit:5 %}<p><a href="{{ post.url }}">{{ post.title }}</a></p>{% endfor %}
     </div>
     <div class="col-sm-4">
       <div class="panel panel-primary">
