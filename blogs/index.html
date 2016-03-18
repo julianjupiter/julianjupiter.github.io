@@ -20,12 +20,12 @@ title: Blogs
       {% if paginator.total_pages > 1 %}
         {% if paginator.previous_page %}
         <button class="btn btn-default">
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+            <a href="{{ paginator.previous_page_path }}">&larr; Newer Posts</a>
         </button>
         {% endif %}
         {% if paginator.next_page %}
         <button class="btn btn-default">
-            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+            <a href="{{ paginator.next_page_path }}">Older Posts &rarr;</a>
         </button>
         {% endif %}
       </ul>
