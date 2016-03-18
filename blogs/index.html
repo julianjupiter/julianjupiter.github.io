@@ -18,27 +18,6 @@ title: Blogs
       
       <hr>
 {% endfor %}
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<div>
-    {% if paginator.previous_page %}
-    <button class="btn btn-default">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </button>
-    {% else %}
-      <span class="previous">Previous</span>
-    {% endif %}
-    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.next_page %}
-    <button class="btn btn-default">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </button>
-    {% else %}
-      <span class="previous">Previous</span>
-    {% endif %}
-</div>
-{% endif %}
     </div> 
     <div class="col-sm-4">
       <div class="panel panel-primary">
