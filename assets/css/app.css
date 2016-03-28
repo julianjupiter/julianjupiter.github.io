@@ -8,6 +8,10 @@ body {
 	font-family: 'Ubuntu', 'Lato', serif;
 }
 
+a {
+	color: #808080;
+}
+
 .jumbotron#header {
 	 background-color: #C8C8C8 ;
 	 text-align: center;
