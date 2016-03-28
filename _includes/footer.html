@@ -1,35 +1,16 @@
 <hr>	
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12" style="text-align: center">
-				<p class="copyright">
-					All contents copyright by Julian Jupiter<br>
-					&copy; 2016 All Rights Reserved<br>
-					Proudly hosted by <a href="https://github.com">GitHub</a>
-        			</p>
-			</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12" style="text-align: center">
+			<p class="copyright">
+				All contents copyright by Julian Jupiter<br>
+				&copy; 2016 All Rights Reserved<br>
+				Proudly hosted by <a href="https://github.com">GitHub</a>
+        		</p>
 		</div>
 	</div>
+</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
-<script>
-$(function () {
-    // Check the initial Poistion of the Sticky Header
-    var stickyHeaderTop = $('#stickyheader').offset().top;
-
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > stickyHeaderTop) {
-            $("nav").attr("class", "navbar navbar-default");
-            $(".navbar-right").css("margin-right", "-15px");
-            $(".navbar-right").css("float", "right!important");
-
-        } else {
-            $("nav").attr("class", "navbar navbar-default");
-            $(".navbar-right").css("margin-right", "-30px");
-            $(".navbar-right").css("float", "right!important");
-        }
-    });
-});
-</script>
