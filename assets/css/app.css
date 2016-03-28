@@ -2,9 +2,11 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
 	font-family: 'Ubuntu', 'Lato', serif;
 }
+
 .jumbotron#header {
 	 background-color: #C8C8C8 ;
 	 text-align: center;
@@ -22,6 +24,7 @@ img#avatar {
 	width: 100px;
 	margin: 0 auto;
 }
+
 .btn-circle {
   border-color: #989898;
   width: 30px;
@@ -56,4 +59,8 @@ img#avatar {
 	padding-top: 4px; 
 	padding-right: 8px; 
 	padding-left: 3px;
+}
+
+a {
+	color: #000;
 }
