@@ -1,5 +1,9 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
-	font-family: "Georgia";
+	font-family: 'Ubuntu', 'Lato', serif;
 }
 .jumbotron#header {
 	 background-color: #C8C8C8 ;
