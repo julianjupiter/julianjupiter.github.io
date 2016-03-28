@@ -2,15 +2,10 @@
 layout: default
 title: Blogs
 ---
-<div id="blogs-jumbotron" class="jumbotron">
-  <div class="container">
-    <h2>{{ page.title }}</h2>
-  </div>
-</div>
 <div class="container">
   <div class="row">
     <div class="col-sm-8">
-      {% for post in paginator.posts %}
+      {% for post in site.posts %}
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
       <p><info datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }} <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.url}}"></a></info></p>
       <p><a class="btn btn-default" href="{{ post.url }}" role="button">Read me &raquo;</a></p>
@@ -20,24 +15,16 @@ title: Blogs
       {% if paginator.total_pages > 1 %}
         {% if paginator.previous_page %}
         <button class="btn btn-default">
-            <a href="{{ paginator.previous_page_path }}">&larr; Newer Posts</a>
+            <a href="{{ paginator.previous_page_path }}" class="btn btn-default" style="border-radius:15px 15px 15px 15px;">&larr; Newer Posts</a>
         </button>
         {% endif %}
         {% if paginator.next_page %}
         <button class="btn btn-default">
-            <a href="{{ paginator.next_page_path }}">Older Posts &rarr;</a>
+            <a href="{{ paginator.next_page_path }}" class="btn btn-default" style="border-radius:15px 15px 15px 15px;">Older Posts &rarr;</a>
         </button>
         {% endif %}
       </ul>
       {% endif %}
     </div> 
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Latest Blogs</div>
-        <div class="panel-body">
-          {% for post in site.posts limit:5 %}<p><a href="{{ post.url }}">{{ post.title }}</a></p>{% endfor %}
-        </div>
-      </div>
-    </div>
   </div>
 </div>
