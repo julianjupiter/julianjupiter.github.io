@@ -7,7 +7,7 @@ comments: true
         <div class="col-sm-8 col-sm-offset-2">{% unless page.title_hidden %}
             <div style="text-align:center;">
                 <h3>{{ page.title }}</h3>
-                <p></p><info datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</info>{% endunless %}
+                <p><info datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</info>{% endunless %}
                 <a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{page.url}}"></a></p>
             </div>
         </div>
