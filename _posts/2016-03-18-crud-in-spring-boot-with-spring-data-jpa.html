@@ -17,23 +17,30 @@ description: Tutorial about CRUD operations in Spring Boot with Spring Data JPA.
 <p>For NetBeans users, just click <strong>File > Open Project...</strong> or click <strong>Open Project</strong> toolbar, and locate where you unzipped the project. NetBeans natively suports Maven project, no conversion needed.</p>
 <h2>Database Table</h2>
 <p>Create database in MySQL. Mine is <strong>springbootcrud</strong>. Add the following table:</p>
-<code>CREATE TABLE `contact` (</code><br>
-<code>  `id` int(11) NOT NULL AUTO_INCREMENT,</code><br>
-<code>  `last_name` varchar(100) NOT NULL,</code><br>
-<code>  `first_name` varchar(100) NOT NULL,</code><br>
-<code>  `mobile_no` varchar(11) NOT NULL,</code><br>
-<code>  `address` varchar(255) NOT NULL,</code><br>
-<code>  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,</code><br>
-<code>  PRIMARY KEY (`id`)</code><br>
-<code>) ENGINE=InnoDB DEFAULT CHARSET=latin1;</code><br>
-<br>
+<script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/springbootcrud.sql"></script>
 <h2>Codes</h2>
 <h3>Property</h3>
 <p>Insert the following to <strong>application.properties</strong></p>
-<code>spring.datasource.url = jdbc:mysql://localhost:3306/springbootcrud</code><br>
-<code>spring.datasource.username = user1</code><br>
-<code>spring.datasource.password = user123</code><br>
-<br>
+<script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/src/main/resources/application.properties"></script>
+<h3>Configuration</h3>
+<p><strong>RepositoryConfiguration</strong></p>
+<script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/src/main/configuration/RepositoryConfiguration.java"></script>
+<h3>Main Class</h3>
+<p><strong>Application.java</strong></p>
+<script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/src/main/java/io/github/julianjupiter/springbootcrud/Application.java"></script>
 <h3>Domain</h3>
 <p><strong>Contact.java</strong></p>
 <script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/src/main/java/io/github/julianjupiter/springbootcrud/domain/Contact.java"></script>
+<h3>Repository</h3>
+<p><strong>ContactRepository.java</strong></p>
+<script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/src/main/java/io/github/julianjupiter/springbootcrud/repository/ContactRepository.java"></script>
+<h3>Service</h3>
+<p><strong>ContactService.java</strong></p>
+<script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/src/main/java/io/github/julianjupiter/springbootcrud/service/ContactServiceImpl.java"></script>
+<p><strong>ContactServiceImpl.java</strong></p>
+<script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/src/main/java/io/github/julianjupiter/springbootcrud/service/ContactServiceImpl.java"></script>
+<h3>Controllers</h3>
+<p><strong>HomeController.java</strong></p>
+<script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/src/main/java/io/github/julianjupiter/springbootcrud/controller/HomeController.java"></script>
+<p><strong>ContactController.java</strong></p>
+<script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/src/main/java/io/github/julianjupiter/springbootcrud/controller/ContactController.java"></script>
