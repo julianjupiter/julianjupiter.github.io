@@ -6,6 +6,14 @@ description: Tutorial about CRUD operations in Spring Boot with Spring Data JPA.
 ---
 
 <p><span class="drop-cap">T</span>utorial about CRUD operations in Spring Boot with Spring Data JPA. Application developed in this tutorial performs adding, editing, updating and deleting contacts.</p>
+<p>We will be using the following to successfully create our application in this tutorial:</p>
+<ul>
+    <li>Spring Web (Spring MVC, Spring Web MVC, a lot)</li>
+    <li>MySQL</li>
+    <li>Spring Data JPA (JPA, Hibernate)</li>
+    <li>Thymeleaf - template engine; bye JSP!</li>
+    <li>Many more...</li>
+</ul>
 <h2>Create A Project</h2>
 <p>Go to <a href="https://start.spring.io" title="Spring Intializr">Spring Initializr</a> and create a Maven project.</p>
 <p><img class="img-responsive" src="/assets/img/crud-in-spring-boot-with-spring-data-jpa/1.png" alt="Create Project in Spring Initializr"></p>
@@ -15,6 +23,9 @@ description: Tutorial about CRUD operations in Spring Boot with Spring Data JPA.
 <code>$ mvn eclipse:eclipse</code><br>
 <br>
 <p>For NetBeans users, just click <strong>File > Open Project...</strong> or click <strong>Open Project</strong> toolbar, and locate where you unzipped the project. NetBeans natively suports Maven project, no conversion needed.</p>
+<h2>Dependencies</h2>
+<p>Updadte your <strong>pom.xml</strong>:</p>
+<script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/pom.xml"></script>
 <h2>Database Table</h2>
 <p>Create database in MySQL. Mine is <strong>springbootcrud</strong>. Add the following table:</p>
 <script src="http://gist-it.appspot.com/http://github.com/julianjupiter/springbootcrud/blob/master/springbootcrud.sql"></script>
