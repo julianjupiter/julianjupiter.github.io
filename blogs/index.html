@@ -4,7 +4,7 @@ title: Blogs
 ---
 <div class="container">
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">{% for post in site.posts %}
+    <div class="col-sm-4 col-sm-offset-2">{% for post in site.posts %}
       <h3>{{ post.title }}</h3>
       <p><info datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }} <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.url}}"></a></info></p>
       <p><a class="btn btn-default" href="{{ post.url }}" role="button" style="border-radius:15px 15px 15px 15px;">Read me &raquo;</a></p>
