@@ -1,4 +1,1 @@
 permalink: /blogs/:year/:month/:day/:title.html
-paginate_path: "/blog/page:num/"
-paginate: 5
-gems: [jekyll-paginate, jekyll-feed]
