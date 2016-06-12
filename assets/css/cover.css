@@ -162,6 +162,10 @@ body {
   }
 }
 
+.circle {
+	border-radius: 50%;
+}
+
 img#avatar {
 	background-color: #fff;
 	background-size:contain;
