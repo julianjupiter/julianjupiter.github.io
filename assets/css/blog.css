@@ -7,6 +7,10 @@ body {
   padding-top: 0px;
 }
 
+a {
+    outline: none !important;
+}
+
 
 /*
  * Global add-ons
@@ -70,7 +74,6 @@ font-weight: bold;
   padding-right: 20px;
   padding-left: 20px;
   color: rgba(255,255,255,.75);
-  border-bottom: 2px solid transparent;
 
 }
 .nav-sidebar > li > a:hover,
@@ -81,8 +84,6 @@ font-weight: bold;
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
   color: #fff;
-  
-border-bottom-color: #fff;
 }
 
 
