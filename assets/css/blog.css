@@ -128,6 +128,14 @@ font-weight: bold;
 	border-radius: 50%;
 }
 
+img#avatar {
+	background-color: #fff;
+	background-size:contain;
+	border: 3px solid #989898;  
+	height: 150px;
+	width: 150px;
+	margin: 0 auto;
+}
 .navbar {
 background-color: #333;
 }
