@@ -120,8 +120,9 @@ img#avatar {
 .navbar {
 background-color: #333;
 }
-.navbar-brand a,
-.navbar-brand a:hover,
-.navbar-brand a:focus {
+
+.navbar > .navbar-header > a,
+.navbar > .navbar-header > a:hover,
+.navbar > .navbar-header > a:focus {
     color: #fff;
 }
