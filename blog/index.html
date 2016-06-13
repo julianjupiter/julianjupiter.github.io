@@ -44,9 +44,9 @@ title: Blogs
           <h1 class="page-header">Blog</h1>{% for post in site.posts %}
             <div class="row">
               <div class="col-sm-8 col-sm-offset-2">
-                <h3><a href="{{ post.url }}" title="{{ post.description }}">{{ post.title }}</a></h3>
-                <h4><info datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }} <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a></info></h4>
-                <p><a class="btn btn-default" href="{{ post.url }}" role="button" style="border-radius:15px 15px 15px 15px;">Read me &raquo;</a></p>
+                <h3><a href="http://julianjupiter.github.io{{ post.url }}" title="{{ post.description }}">{{ post.title }}</a></h3>
+                <h4><info datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }} <a href="http://julianjupiter.github.io{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a></info></h4>
+                <p><a class="btn btn-default" href="http://julianjupiter.github.io{{ post.url }}" role="button" style="border-radius:15px 15px 15px 15px;">Read me &raquo;</a></p>
               </div>
             </div>
         </div>
