@@ -8,7 +8,7 @@ comments: true
             <div style="text-align:center;">
                 <h3>{{ page.title }}</h3>
                 <p><info datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</info>{% endunless %}
-                <a href="http://julianjupiter.github.io{{ page.url }}index.html#disqus_thread" data-disqus-identifier="{{page.url}}"></a></p>
+                <a href="{{ page.url | prepend: site.github.url }}index.html#disqus_thread" data-disqus-identifier="{{page.url}}"></a></p>
             </div>
         </div>
     </div>
