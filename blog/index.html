@@ -48,7 +48,7 @@ title: Blogs
                 <h4><info datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }} <a href="{{ post.url | prepend: site.github.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a></info></h4>
                 <p><a class="btn btn-default" href="{{ post.url | prepend: site.github.url }}" role="button" style="border-radius:15px 15px 15px 15px;">Read me &raquo;</a></p>
               </div>
-            </div>
+            </div>{% endfor %}
         </div>
       </div>
     </div>
