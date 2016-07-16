@@ -45,7 +45,7 @@ title: Blogs
             <div class="row">
               <div class="col-sm-8 col-sm-offset-2">
                 <h3><a href="{{ post.url | prepend: site.github.url }}" title="{{ post.description }}">{{ post.title }}</a></h3>
-                <h4><info datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }}</info> &#124; <a href="{{ post.url | prepend: site.github.url }}#disqus_thread" data-disqus-identifier="{{post.url}}"></a></h4>
+                <h4><info datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }}</info> &#124; <a href="{{ post.url | prepend: site.github.url }}/index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a></h4>
                 <p><a class="btn btn-default" href="{{ post.url | prepend: site.github.url }}" role="button" style="border-radius:15px 15px 15px 15px;">Read me &raquo;</a></p>
               </div>
             </div>{% endfor %}
