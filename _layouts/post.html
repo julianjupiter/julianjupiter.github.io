@@ -1,6 +1,7 @@
-{% include post_top.html %} 
-<body> 
-{% include header.html %} 
+---
+layout: default
+comments: true
+---
 <div class="container">
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">{% unless page.title_hidden %}
@@ -25,8 +26,3 @@
     </div>
     <!-- End : Comments -->
 </div>
-{% include footer.html %} 
-<script id="dsq-count-scr" src="//julianjupitergithubio.disqus.com/count.js" async></script>
-</body> 
-</html> 
-
