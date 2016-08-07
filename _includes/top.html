@@ -2,6 +2,10 @@
   <html lang="en-US"> 
     <head> 
       <meta charset="UTF-8"> 
+      <meta name="title" content="{{ page.title }}">
+      <meta name="description" content="{{ page.description }}">
+      <meta name="keywords" content="{{ page.keywords }}">
+      <meta name="author" content="Julian V. Jupiter">
       <title>{{ page.title }} &mdash; Julez Jupiter</title> 
       <meta name="viewport" content="width=device-width,initial-scale=1"> 
       <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
@@ -26,4 +30,5 @@
       ga('send', 'pageview');
     
       </script>
-    </head>
+    </head> 
+    {{ post.url | prepend: site.github.url }}" title="{{ post.description }}"
