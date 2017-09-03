@@ -1,46 +1,34 @@
 ---
-layout: index 
+layout: default
 title: Home
 description: Home page of Julian Jupiter website on GitHub Pages.
-keywords: Blog, GitHub, Programming, Linux, Web
+keywords: Blog, GitHub, Programming, Java, Linux, Web
 ---
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand"><a href="http://julianjupiter.github.io">Julian Jupiter</a></h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="http://julianjupiter.github.io">Home</a></li>
-                  <li><a href="/blog">Blog</a></li>
-                  <li><a href="/projects">Projects</a></li>
-                  <li><a href="/contact">Contact</a></li>
-                </ul>
-              </nav>
+    <!-- Post -->
+    <div class="container">{% for post in site.posts %}
+        <hr class="divider">
+        <div class="row">{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}{% if thecycle == 'odd' %}
+            <div class="col-sm-6 postOdd order-1">
+                <h3 class="featurette-heading"><a href="{{ post.url | prepend: site.github.url }}" title="{{ post.description }}">{{ post.title }}</a></h3>
+                <p class="text-muted"><info datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }}</info> &#124; <a href="{{ post.url | prepend: site.github.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a></p>
+                <p class="lead">{{ post.description }}</p>
+                <p class="lead">
+                <a class="btn btn-secondary btn-lg" href="{{ post.url | prepend: site.github.url }}" role="button">Read more...</a>
+                </p>
             </div>
-          </div>
-
-          <div class="inner cover">
-              <h3>
-                  <a href="http://julianjupiter.github.io"><img id="avatar" class="circle" src="/assets/img/avatar.jpg" alt="Julian Jupiter"></a>
-              </h3>
-            <h1 class="cover-heading">Welcome to my page!</h1>
-            <p class="lead">Enjoy reading.</p>
-            <p class="lead">
-              <a href="/blog" class="btn btn-lg btn-default">Visit my blog.</a>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>
-                  &copy; 2016 <a href="http://julianjupiter.github.com">Julian Jupiter</a><br>
-                  All Rights Reserved<br>
-                  Proudly hosted by <a href="https://github.com">GitHub</a>
-              </p>
+            <div class="col-sm-6 postThumbnailOdd order-2">
+                <img class="img-fluid mx-auto" src="/assets/images/{{ post.thumbnail }}" data-src="holder.js/500x200/auto" alt="Generic placeholder image">
+            </div>{% else %}
+            <div class="col-sm-6">
+                <img class="img-fluid mx-auto" src="/assets/images/{{ post.thumbnail }}" data-src="holder.js/500x200/auto" alt="Generic placeholder image">
             </div>
-          </div>
-        </div>
-      </div>
+            <div class="col-sm-6">
+                <h3 class="featurette-heading"><a href="{{ post.url | prepend: site.github.url }}" title="{{ post.description }}">{{ post.title }}</a></h3>
+                <p class="text-muted"><info datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }}</info> &#124; <a href="{{ post.url | prepend: site.github.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a></p>
+                <p class="lead">{{ post.description }}</p>
+                <p class="lead">
+                <a class="btn btn-secondary btn-lg" href="{{ post.url | prepend: site.github.url }}" role="button">Read more...</a>
+                </p>
+            </div>{% endif %}
+        </div>{% endfor %}
     </div>
