@@ -10,6 +10,7 @@
         <title>Julez Jupiter &mdash; CRUD in Spring Boot with Spring Data JPA</title>
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <script>
@@ -26,25 +27,37 @@
 
     <body>
                 <!-- Header -->
-        <div class="container-fluid text-center">
+        <div class="container">
             <div class="row">
-                <div id="header" class="col">
-                     <h1 class="display-3">Julian Jupiter</h1>
-                     <a href="http://julianjupiter.github.io"><img class="rounded-circle" src="/assets/images/avatar.jpg"></a>
-                     <hr class="my-4">
-                     <p>{"Software Engineer", "Blogger", "Hiker"}</p>
-                     <ul class="socialMedia">
-                         <li><a class="btn btn-default rounded-circle" href="http://twitter.com/julianvjupiter" role="button"><i class="fa fa-twitter fa-2x"></i></a></li>
-                         <li><a class="btn btn-default rounded-circle" href="http://github.com/julianjupiter" role="button"><i class="fa fa-github fa-2x"></i></a></li>
-                     </ul>
+                <div class="col-sm-9 mx-auto text-center">                    
+                    <header id="mainHeader">
+                        <img class="img-fluid rounded-circle" src="/assets/images/avatar.jpg">
+                        <h1 id="title">Julian Jupiter</h1>
+                        <p id="description">{"Software Engineer", "Blogger", "Hiker"}</p>
+                        <hr>
+                    </header>
                 </div>
             </div>
-         </div>
-
-        <div class="container">
-    <hr class="divider">
+            <div class="row">
+                <div class="col-sm-9 mx-auto">
+                    <ul id="menu" class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://twitter.com/julianvjupiter">Twitter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://github.com/julianjupiter">GitHub</a>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="container text-justify">
     <div class="row">
-        <div class="col-sm-8 mx-auto">
+        <div class="col-sm-9 mx-auto">
             <div class="text-center">
                 <h2>CRUD in Spring Boot with Spring Data JPA</h2>
                 <p><info datetime="2016-04-11">April 11, 2016</info> &#124;
@@ -53,8 +66,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-8 mx-auto ">
-            <p><span class="drop-cap">T</span>utorial about CRUD operations in Spring Boot with Spring Data JPA. Application developed in this tutorial performs adding, editing, updating and deleting contacts.</p>
+        <div class="col-sm-9 mx-auto ">
+            <p><span class="dropCap">T</span>utorial about CRUD operations in Spring Boot with Spring Data JPA. Application developed in this tutorial performs adding, editing, updating and deleting contacts.</p>
 <p>We will be using the following to successfully create our application in this tutorial:</p>
 <ul>
     <li>Spring Web (Spring MVC, Spring Web MVC, a lot)</li>
@@ -65,7 +78,7 @@
 </ul>
 <h2>Create A Project</h2>
 <p>Go to <strong>S<a href="https://start.spring.io" title="Spring Intializr">pring Initializr</a></strong> and create a Maven project.</p>
-<p><img class="img-responsive" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/1.png" alt="Create Project in Spring Initializr"></p>
+<p><img class="img-fluid" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/1.png" alt="Create Project in Spring Initializr"></p>
 <p>Once done, hit <strong>Generate Project</strong> button to save the project.</p>
 <p>Unzip the project and start coding. You can use any editor or IDE you prefer. For Eclipse users, you will have to issue the following command via Terminal before importing to Eclipse:</p>
 <code>$ cd springbootcrud</code><br>
@@ -138,19 +151,19 @@ $ mvn package &amp;&amp; java -jar target/springbootcrud-0.0.1.jar
 <p>Open your browser and point to: <b><a href="http://localhost:8080" _target="blank">http://localhost:8080</a></b></p>
 <h2>Screenshots</h2>
 <h2>Home Page</h2>
-<p><img class="img-responsive" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/2.png" alt="Create Project in Spring Initializr"></p>
+<p><img class="img-fluid" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/2.png" alt="Create Project in Spring Initializr"></p>
 <h2>Contacts Page</h2>
 <h3>Contact List (without records)</h3>
-<p><img class="img-responsive" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/3.png" alt="Create Project in Spring Initializr"></p>
+<p><img class="img-fluid" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/3.png" alt="Create Project in Spring Initializr"></p>
 <h3>Add Contact Form</h3>
-<p><img class="img-responsive" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/4.png" alt="Create Project in Spring Initializr"></p>
-<p><img class="img-responsive" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/5.png" alt="Create Project in Spring Initializr"></p>
+<p><img class="img-fluid" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/4.png" alt="Create Project in Spring Initializr"></p>
+<p><img class="img-fluid" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/5.png" alt="Create Project in Spring Initializr"></p>
 <h3>Contact List (with records)</h3>
-<p><img class="img-responsive" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/6.png" alt="Create Project in Spring Initializr"></p>
+<p><img class="img-fluid" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/6.png" alt="Create Project in Spring Initializr"></p>
 <h3>View Contact</h3>
-<p><img class="img-responsive" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/7.png" alt="Create Project in Spring Initializr"></p>
+<p><img class="img-fluid" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/7.png" alt="Create Project in Spring Initializr"></p>
 <h3>Edit Contact Form</h3>
-<p><img class="img-responsive" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/8.png" alt="Create Project in Spring Initializr"></p>
+<p><img class="img-fluid" src="/assets/images/crud-in-spring-boot-with-spring-data-jpa/8.png" alt="Create Project in Spring Initializr"></p>
 <p>Please post your comments or suggestions.</p>
 <p>You can download complete source code <strong><a href="https://github.com/julianjupiter/springbootcrud" title="springbootcrud Source Code">here</a></strong>.</p>
 
@@ -159,7 +172,7 @@ $ mvn package &amp;&amp; java -jar target/springbootcrud-0.0.1.jar
     <!-- End : content-->
     <!-- Begin : Comments -->
     <div class="row">
-        <div class="col-sm-8 mx-auto">
+        <div class="col-sm-9 mx-auto">
             
 <div id="disqus_thread"></div>
 <script>
@@ -220,7 +233,7 @@ $ mvn package &amp;&amp; java -jar target/springbootcrud-0.0.1.jar
         <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="/assets/js/holder.min.js" type="text/javascript"></script>
         <script src="/assets/js/main.js" type="text/javascript"></script>
-        <script id="dsq-count-scr" src="//julianjupitergithubio.disqus.com/count.js"></script
+        <script id="dsq-count-scr" src="//julianjupitergithubio.disqus.com/count.js"></script>
 
     </body>
 </html>

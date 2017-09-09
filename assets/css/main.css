@@ -1,34 +1,61 @@
-body {
+header#mainHeader {
+    color: #343a40;
+    padding-top: 1.5rem;
+} 
+
+header#mainHeader img {
+    border: solid .25rem #343a40;
+}
+
+header#mainHeader h1#title {
+    font-family: 'UnifrakturMaguntia', cursive;
+}
+
+header#mainHeader p#description {
     font-family: 'PT Mono', monospace;
-    padding-top: 0;
 }
 
-div#header {
-    background-color: #333;
-    border-bottom: solid .5em #ccc;
+hr {
+    background-color: #343a40;
+}
+
+#menu.nav a {
+    color: #343a40;
+}
+
+#menu.nav a:hover {
+    color: #868e96;
+}
+
+#menu.nav a.active {
+    background-color: #343a40;
+    border-radius: .25rem !important;
     color: #fff;
-    padding: 2em 2em 1em 2em;
 }
 
-ul.socialMedia {
-  padding-left: 0;
+.dropCap {
+    float: left; 
+    font-size: 50px; 
+    line-height: 35px; 
+    padding-top: 4px; 
+    padding-right: 8px; 
+    padding-left: 3px;
 }
 
-ul.socialMedia li {
-    display: inline-block;
-    list-style-type: none;
-
+#content a.postTitle {
+    color: #343a40 !important;
 }
 
-hr.divider {
-    margin: 3rem 0;
+#content h2 {
+    margin-top: 2rem;
 }
 
-footer#footer {
-    background-color: #868e96;
-    border-radius: 0;
-    border-top: solid .5em #ccc;
-    color: #fff;
-    margin-top: 2em;
-    padding: 1em;
+#menu,
+#content,
+#footer {
+    font-family: 'PT Mono', monospace;
+}
+
+#footer {
+    margin-top: 3rem;
 }

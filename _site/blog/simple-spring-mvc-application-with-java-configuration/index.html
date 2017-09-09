@@ -10,6 +10,7 @@
         <title>Julez Jupiter &mdash; Simple Spring MVC Application with Java Configuration</title>
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <script>
@@ -26,25 +27,37 @@
 
     <body>
                 <!-- Header -->
-        <div class="container-fluid text-center">
+        <div class="container">
             <div class="row">
-                <div id="header" class="col">
-                     <h1 class="display-3">Julian Jupiter</h1>
-                     <a href="http://julianjupiter.github.io"><img class="rounded-circle" src="/assets/images/avatar.jpg"></a>
-                     <hr class="my-4">
-                     <p>{"Software Engineer", "Blogger", "Hiker"}</p>
-                     <ul class="socialMedia">
-                         <li><a class="btn btn-default rounded-circle" href="http://twitter.com/julianvjupiter" role="button"><i class="fa fa-twitter fa-2x"></i></a></li>
-                         <li><a class="btn btn-default rounded-circle" href="http://github.com/julianjupiter" role="button"><i class="fa fa-github fa-2x"></i></a></li>
-                     </ul>
+                <div class="col-sm-9 mx-auto text-center">                    
+                    <header id="mainHeader">
+                        <img class="img-fluid rounded-circle" src="/assets/images/avatar.jpg">
+                        <h1 id="title">Julian Jupiter</h1>
+                        <p id="description">{"Software Engineer", "Blogger", "Hiker"}</p>
+                        <hr>
+                    </header>
                 </div>
             </div>
-         </div>
-
-        <div class="container">
-    <hr class="divider">
+            <div class="row">
+                <div class="col-sm-9 mx-auto">
+                    <ul id="menu" class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://twitter.com/julianvjupiter">Twitter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://github.com/julianjupiter">GitHub</a>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="container text-justify">
     <div class="row">
-        <div class="col-sm-8 mx-auto">
+        <div class="col-sm-9 mx-auto">
             <div class="text-center">
                 <h2>Simple Spring MVC Application with Java Configuration</h2>
                 <p><info datetime="2015-11-28">November 28, 2015</info> &#124;
@@ -53,8 +66,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-8 mx-auto ">
-                  <p><span class="drop-cap">T</span>his is a simple Spring MVC application with Java configuration instead of XML.</p>
+        <div class="col-sm-9 mx-auto ">
+                  <p><span class="dropCap">T</span>his is a simple Spring MVC application with Java configuration instead of XML.</p>
       <p><a href="https://github.com/julianjupiter/SpringMVCGreetingsApp">Source</a></p>
 
         </div>
@@ -62,7 +75,7 @@
     <!-- End : content-->
     <!-- Begin : Comments -->
     <div class="row">
-        <div class="col-sm-8 mx-auto">
+        <div class="col-sm-9 mx-auto">
             
 <div id="disqus_thread"></div>
 <script>
@@ -123,7 +136,7 @@
         <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="/assets/js/holder.min.js" type="text/javascript"></script>
         <script src="/assets/js/main.js" type="text/javascript"></script>
-        <script id="dsq-count-scr" src="//julianjupitergithubio.disqus.com/count.js"></script
+        <script id="dsq-count-scr" src="//julianjupitergithubio.disqus.com/count.js"></script>
 
     </body>
 </html>

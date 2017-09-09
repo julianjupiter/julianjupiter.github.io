@@ -2,10 +2,9 @@
 layout: default
 comments: true
 ---
-<div class="container">
-    <hr class="divider">
+<div id="content" class="container text-justify">
     <div class="row">
-        <div class="col-sm-8 mx-auto">{% unless page.title_hidden %}
+        <div class="col-sm-9 mx-auto">{% unless page.title_hidden %}
             <div class="text-center">
                 <h2>{{ page.title }}</h2>
                 <p><info datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</info>{% endunless %} &#124;
@@ -14,14 +13,14 @@ comments: true
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-8 mx-auto ">
+        <div class="col-sm-9 mx-auto ">
             {{ content }}
         </div>
     </div>
     <!-- End : content-->
     <!-- Begin : Comments -->
     <div class="row">
-        <div class="col-sm-8 mx-auto">
+        <div class="col-sm-9 mx-auto">
             {% include disqus.html %}
         </div>
     </div>
