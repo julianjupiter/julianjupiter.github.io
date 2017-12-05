@@ -4,6 +4,7 @@ body {
 }
 
 .starter-template {
+  color: #9E9E9E;
   padding: 3rem 1.5rem;
   text-align: center;
 }
@@ -29,4 +30,22 @@ body {
 .navbar-summer .navbar-nav > .active > a:focus, 
 .navbar-summer .navbar-nav > .active > a:hover {
   background-color: #FF9800;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;   
+  padding-top: 10px;
+  padding-bottom: 2px;
+}
+
+.footer .container .col-sm-12 {
+  text-align: center;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
 }
