@@ -1,0 +1,32 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  padding-top: 5rem;
+}
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.starter-template > #title {
+  color: #FF9800;
+}
+
+.navbar-summer {
+  background-color: #FF9800;
+  border-color: #FF9800;
+}
+
+.navbar-summer a {
+  color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+  color: #2196F3;
+}
+.navbar-summer .navbar-nav > .active > a, 
+.navbar-summer .navbar-nav > .active > a:focus, 
+.navbar-summer .navbar-nav > .active > a:hover {
+  background-color: #FF9800;
+}
