@@ -8,26 +8,26 @@ thumbnail: 2017-12-07-installation-of-php-7-on-windows-10/2.PNG
 ---
 
 <p><span class="dropCap">T</span>his is a step-by-step setup of PHP 7 on Windows 10.</p>
-<h2>1. Download PHP package from <a href="http://windows.php.net/download">PHP website</a>. The latest version as of this time is 7.2.0. Choose VC15 x64 Thread Safe or VC15 x86 Thread Safe for 64-bit or 32-bit OS. In my case, I downloaded the <a href="http://windows.php.net/downloads/releases/php-7.2.0-nts-Win32-VC15-x64.zip" alt="VC15 x86 Thread Safe">former</a>.</h2>
+<h5>1. Download PHP package from <a href="http://windows.php.net/download">PHP website</a>. The latest version as of this time is 7.2.0. Choose VC15 x64 Thread Safe or VC15 x86 Thread Safe for 64-bit or 32-bit OS. In my case, I downloaded the <a href="http://windows.php.net/downloads/releases/php-7.2.0-nts-Win32-VC15-x64.zip" alt="VC15 x86 Thread Safe">former</a>.</h5>
 <p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/1.PNG" alt="VC15 x86 Thread Safe"></p>
-<h2>2. Extract the package to <strong>C:\php</strong>.</h2>
-<h2>3. Inside php directory, make a copy of <strong>php.ini-development</strong> and rename it to <strong>php.ini</strong>.</h2>
+<h5>2. Extract the package to <strong>C:\php</strong>.</h5>
+<h5>3. Inside php directory, make a copy of <strong>php.ini-development</strong> and rename it to <strong>php.ini</strong>.</h5>
 <p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/2.PNG" alt="PHP Ini"></p>
-<h2>4. Open <strong>php.ini</strong> and uncomment the following (line 732):</h2>
+<h5>4. Open <strong>php.ini</strong> and uncomment the following (line 732):</h5>
 <code>
     ; extension_dir = "ext"
 </code>    
 <p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/3.PNG" alt="Extension Directory"></p>
-<h2>5. Add <strong>php.exe</strong> to <strong>Environment Variables's Path</strong>. To add, look for <strong>Path</strong> under <strong>System variables</strong> and click <strong>Edit...</strong> button. Click New button and enter <strong>C:\php</strong>.</h2>
+<h5>5. Add <strong>php.exe</strong> to <strong>Environment Variables's Path</strong>. To add, look for <strong>Path</strong> under <strong>System variables</strong> and click <strong>Edit...</strong> button. Click New button and enter <strong>C:\php</strong>.</h5>
 <p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/4a.PNG" alt="Setting Environment Variables Path"></p>
 <p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/4b.PNG" alt="Setting Environment Variables Path"></p>
-<h2>6. To test, create a directory: <strong>C:\workspace\php</strong>. Open your favorite text editor (mine is Visual Studio Code). Add the following codes to a file saved as <strong>hello.php</strong> inside <strong>C:\workspace\php:</strong></h2>
+<h5>6. To test, create a directory: <strong>C:\workspace\php</strong>. Open your favorite text editor (mine is Visual Studio Code). Add the following codes to a file saved as <strong>hello.php</strong> inside <strong>C:\workspace\php:</strong></h5>
 <code>
     &lt;?php
     echo "Hello, world!";
 </code>
 <p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/5.PNG" alt="Test PHP"></p>
-<h2>7. Open CMD and cd to <strong>C:\workspace\php<strong>. Run the following command:</h2>
+<h5>7. Open CMD and cd to <strong>C:\workspace\php<strong>. Run the following command:</h5>
 <code>
 php -S localhost:3000 -t .
 </code>
@@ -35,7 +35,7 @@ php -S localhost:3000 -t .
 <p>From PHP site:</p>
 <p>As of PHP 5.4.0, the CLI SAPI provides a built-in web server.</p>
 <p>This web server was designed to aid application development. It may also be useful for testing purposes or for application demonstrations that are run in controlled environments. It is not intended to be a full-featured web server. It should not be used on a public network.</p>
-<h2>9. Open your browser and point to <strong>http://localhost:3000/hello.php<strong></h2>
+<h5>8. Open your browser and point to <strong>http://localhost:3000/hello.php<strong></h5>
 <p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/7.PNG" alt="Open PHP script on browser"></p>
 <p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/8.PNG" alt="PHP Built-in Web Server console log"></p>
 <p>It's done!</p>
