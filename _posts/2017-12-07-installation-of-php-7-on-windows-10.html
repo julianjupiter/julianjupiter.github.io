@@ -38,5 +38,41 @@ php -S localhost:3000 -t .
 <h5>8. Open your browser and point to <strong>http://localhost:3000/hello.php<strong></h5>
 <p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/7.PNG" alt="Open PHP script on browser"></p>
 <p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/8.PNG" alt="PHP Built-in Web Server console log"></p>
+<h5>9. Enable extension you want to use. For example, most likely you will be developing database-driven web applications and you're going to use <a href="https://www.mysql.com/">MySQL</a>, the world's most popular open-source DBMS. Open <string>php.ini</strong> and uncomment either or both of the following:</h5>
+<code>
+    extension=mysqli
+    ...
+    extension=pdo_mysql
+</code>
+<p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/9.PNG" alt="Enable MySQL extensions"></p>
+<p>If you've configured a web server Apache HTTP Server for PHP, you will have to restart it's service to take effect the changes. As for PHP built-in web server, just run it again.
+<p>To test PHP and MySQL connection, you can create a PHP script and call the built-in phpinfo() function to display PHP environment. You should be able to see <strong>php_pdo</strong> include under PDO.</p>
+<code>
+    &lt;?php
+    echo phpinfo();
+</code>
+<p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/10.PNG" alt="PHP phpinfo() built-in function"></p>
+<p>You might also create script which create connection to your database already created in the server.</p>
+<code>
+    &lt;?php
+
+    $dbProvider = 'mysql';
+    $dbHost = 'localhost';
+    $dbPort = '3306';
+    $dbSchema = 'mydb';
+    $dbCharSet = 'utf-8';
+    $dbUser = 'julez';
+    $dbPassword = 'admin';
+    $dns = $dbProvider . ':host=' . $dbHost . ';port=' . $dbPort . ';dbname=' . $dbSchema . ';char-set='. $dbCharSet;
+    $connection = new PDO($dns, $dbUser, $dbPassword);
+
+    if ($connection) {
+        echo 'Database connected!';
+    } else {
+        die('Unable to connect to databese!');
+    }
+</code>
+<p>Save it as <strong>php_pdo_mysql_test.php</strong> and load to your browser.</p>
+<p><img class="img-fluid" src="/assets/images/installation-of-php-7-on-windows-10/11.PNG" alt="PHP PDO MySQL connection"></p>
 <p>It's done!</p>
 <p>Please post your comments or suggestions.</p>
