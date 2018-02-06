@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>toggle demo</title>
+        <style>
+            #p {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn1">Toggle</button>
+        <p id="p">Hello, world!</p>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script>
+            $("#btn1").on("mouseover mouseout", function() {
+                $("#p").toggle();
+            });
+        </script>
+    </body>
+</html>
