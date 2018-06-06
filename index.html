@@ -12,7 +12,7 @@ keywords: Blog, GitHub, Programming, Java, Linux, Web
                 <div class="post">
                     <h4 class="post-title"><a class="postTitle" href="{{ post.url | prepend: site.github.url }}" title="{{ post.description }}">{{ post.title }}</a></h4>
                     <p class="post-meta">
-                        <info datetime="{{ post.date | date: " %Y-%m-%d " }}">{{ post.date | date: "%B %-d, %Y" }}</info> &#124;</p>
+                        <info datetime="{{ post.date | date: " %Y-%m-%d " }}">{{ post.date | date: "%B %-d, %Y" }}</info> &#124; <a href="{{ post.url | prepend: site.github.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a></p>
                     <p>{{ post.description }}</p>
                 </div>{% endfor %}
             </div>
