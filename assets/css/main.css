@@ -10,6 +10,7 @@ body {
 
 #avatar {
     border-radius: 50% !important;
+    border: solid .3rem #666;
 }
 
 .card .post:not(:last-child) {
