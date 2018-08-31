@@ -25,9 +25,7 @@ keywords: Blog, GitHub, Programming, Java, Linux, Web
                         <p><info datetime="{{ post.date | date: " %Y-%m-%d " }}">{{ post.date | date: "%B %-d, %Y" }}</info> &#124; <a href="{{ post.url | prepend: site.github.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a></p>
                         <p class="card-text">{{ post.description }}</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-primary"><a href="{{ post.url | prepend: site.github.url }}" title="{{ post.description }}">Read</a></button>
-                            </div>
+                            <a href="{{ post.url | prepend: site.github.url }}" title="{{ post.description }}"><button type="button" class="btn btn-sm btn-outline-primary">Read</button></a>
                         </div>
                     </div>
                 </div>
