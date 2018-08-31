@@ -1,48 +1,37 @@
-body {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.header {
-    margin-bottom: 1.5rem;
-    padding-top: 1.25rem;
-}
-
-#avatar {
-    border-radius: 50% !important;
-    border: solid .3rem #666;
-}
-
-.card .post:not(:last-child) {
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-    margin-bottom: 1rem;
-}
-
-.post-title {
-    margin-bottom: 0.25rem;
-}
-
-.drop-cap {
-    float: left; 
-    font-size: 50px; 
-    line-height: 35px; 
-    padding-top: 4px; 
-    padding-right: 8px; 
-    padding-left: 3px;
-}
-
-#footer {
-    border-radius: .25rem;
-    margin-top: 1.5rem;
-    padding: 15px 15px;
-}
-
-@media (max-width: 768px) {
-    #personal-info {
-        text-align: left !important;
+:root {
+    --jumbotron-padding-y: 3rem;
+  }
+  
+  .jumbotron {
+    padding-top: var(--jumbotron-padding-y);
+    padding-bottom: var(--jumbotron-padding-y);
+    margin-bottom: 0;
+    background-color: #fff;
+  }
+  @media (min-width: 768px) {
+    .jumbotron {
+      padding-top: calc(var(--jumbotron-padding-y) * 2);
+      padding-bottom: calc(var(--jumbotron-padding-y) * 2);
     }
-    #personal-info .fas {
-        float: left;
-    }
-}
+  }
+  
+  .jumbotron p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .jumbotron-heading {
+    font-weight: 300;
+  }
+  
+  .jumbotron .container {
+    max-width: 40rem;
+  }
+  
+  footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  footer p {
+    margin-bottom: .25rem;
+  }
