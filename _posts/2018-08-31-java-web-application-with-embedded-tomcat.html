@@ -16,7 +16,7 @@ keywords: Java, Tomcat, Embedded
 <ul>
     <li>JDK 8</li>
     <li>Maven</li>
-    <li>an IDE - Eclipse, NetBeans, or Intellij IDEA</li>
+    <li>an IDE - Eclipse (Or NetBeans, Intellij IDEA, if you prefer)</li>
 </ul>
 </h3>
 <h3>Build with Maven</h3>
@@ -45,7 +45,18 @@ java-web-app-with-embedded-tomcat
             └── WEB-INF
 └── pom.xml
 </pre>
-<p>Open <span class="font-weight-bold">pom.xml</span> using your favorite editor (mine is <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>). Copy and paste the following XML file.</p>
+<p>Open <span class="font-weight-bold">pom.xml</span> using your favorite editor (mine is <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>). Copy and paste the following XML.</p>
 <script src="http://gist-it.appspot.com/http://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/develop/pom.xml"></script>
 </pre>
+
+Take note that our *packaging* is jar and we are using Maven Shade Plugin here to package our application into JAR. From its website, it reads: *This plugin provides the capability to package the artifact in an uber-jar, including its dependencies and to shade - i.e. rename - the packages of some of the dependencies.*
+
+Another thing worth to mention is the *mainClass* tag where we define our class with *main* method.
+
+Lastly, we include at least two dependencies for embedding Tomcat: *tomcat-embed-core*, *tomcat-embed-jasper*.
+<h3>Import to Eclipse</h3>
+To import the project:
+
+Eclipse - *File* > *Import...* > *Maven* > *Existing Maven Projects* > *Browse ...* (for Root Directory) > *Finish*
+
 <p>To be continued...</p>
