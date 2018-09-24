@@ -48,15 +48,13 @@ java-web-app-with-embedded-tomcat
 <p>Open <span class="font-weight-bold">pom.xml</span> using your favorite editor (mine is <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>). Copy and paste the following XML.</p>
 <script src="http://gist-it.appspot.com/http://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/develop/pom.xml"></script>
 </pre>
-
-Take note that our *packaging* is jar and we are using Maven Shade Plugin here to package our application into JAR. From its website, it reads: *This plugin provides the capability to package the artifact in an uber-jar, including its dependencies and to shade - i.e. rename - the packages of some of the dependencies.*
-
-Another thing worth to mention is the *mainClass* tag where we define our class with *main* method.
-
-Lastly, we include at least two dependencies for embedding Tomcat: *tomcat-embed-core*, *tomcat-embed-jasper*.
+<p>
+Take note that our <span class="font-weight-bold">packaging</span> is jar and we are using <span class="font-weight-bold">Maven Shade Plugin</span> here to package our application into JAR. From its website, it reads: <span class="font-italic">This plugin provides the capability to package the artifact in an uber-jar, including its dependencies and to shade - i.e. rename - the packages of some of the dependencies.</span>
+</p>
+<p>Another thing worth to mention is the <span class="font-weight-bold">mainClass</span> tag where we define our class with *main* method.</p>
+<p>Lastly, we include at least two dependencies for embedding Tomcat: <span class="font-italic">tomcat-embed-core</span>, <span class="font-italic">tomcat-embed-jasper</span>.</p>
 <h3>Import to Eclipse</h3>
-To import the project:
-
-Eclipse - *File* > *Import...* > *Maven* > *Existing Maven Projects* > *Browse ...* (for Root Directory) > *Finish*
+<p>To import the project:<p>
+<p class="font-weight-bold font-italic">Eclipse - File > Import... > Maven > Existing Maven Projects > Browse ... (for Root Directory) > Finish</p>
 
 <p>To be continued...</p>
