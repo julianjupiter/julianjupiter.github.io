@@ -46,15 +46,20 @@ java-web-app-with-embedded-tomcat
 └── pom.xml
 </pre>
 <p>Open <span class="font-weight-bold">pom.xml</span> using your favorite editor (mine is <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>). Copy and paste the following XML.</p>
-<script src="http://gist-it.appspot.com/http://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/develop/pom.xml"></script>
-</pre>
+<script src="http://gist-it.appspot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/pom.xml"></script>
 <p>
-Take note that our <span class="font-weight-bold">packaging</span> is jar and we are using <span class="font-weight-bold">Maven Shade Plugin</span> here to package our application into JAR. From its website, it reads: <span class="font-italic">This plugin provides the capability to package the artifact in an uber-jar, including its dependencies and to shade - i.e. rename - the packages of some of the dependencies.</span>
+Take note that our <span class="font-weight-bold">packaging</span> is jar</span> and we are using <span class="font-weight-bold">Maven Shade Plugin</span> here to package our application into JAR. From its website, it reads: <span class="font-italic">This plugin provides the capability to package the artifact in an uber-jar, including its dependencies and to shade - i.e. rename - the packages of some of the dependencies.</span>
 </p>
-<p>Another thing worth to mention is the <span class="font-weight-bold">mainClass</span> tag where we define our class with *main* method.</p>
+<p>Another thing worth to mention is the <span class="font-weight-bold">mainClass</span> tag where we define our class with <span class="font-weight-bold font-italic">main</span> method.</p>
 <p>Lastly, we include at least two dependencies for embedding Tomcat: <span class="font-italic">tomcat-embed-core</span>, <span class="font-italic">tomcat-embed-jasper</span>.</p>
 <h3>Import to Eclipse</h3>
 <p>To import the project:<p>
-<p class="font-weight-bold font-italic">Eclipse - File > Import... > Maven > Existing Maven Projects > Browse ... (for Root Directory) > Finish</p>
-
+<p class="font-italic">Eclipse - File > Import... > Maven > Existing Maven Projects > Browse ... (for Root Directory) > Finish</p>
+<h3>Let's Start Coding</h3>
+<h4>Server</h4>
+<p>Create a package <span class="font-weight-bold font-italic">server</span> under <span class="font-weight-bold font-italic">app</span>. Under this package, we will have an interface <span class="font-weight-bold font-italic">Server</span> and class <span class="font-weight-bold font-italic">TomcatServer</span>. The interface will have one abstract method, <span class="font-weight-bold font-italic">run</span> which will serve as entry point to start out Tomcat server. This opens a possibility to add more servers other than Tomcat, either from scratch or use existing ones (Jetty, Undertow).</p>
+<h5>Server.java</h5>
+<script src="http://gist-it.appspot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/server/Server.java"></script>
+<h5>TomcatServer.java</h5>
+<script src="http://gist-it.appspot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/server/TomcatServer.java"></script>
 <p>To be continued...</p>
