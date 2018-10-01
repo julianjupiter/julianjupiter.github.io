@@ -69,19 +69,21 @@ Take note that our <span class="font-weight-bold">packaging</span> is jar</span>
 <p>With the codes above, we can now build and run our application, but since there is no Servlet handler or default JSP page, it will just error page.</p>
 <p>To test our application, create a <span class="font-weight-bold font-italic">index.jsp</span> file inside <span class="font-weight-bold font-italic">webapp</span> folder.</p>
 <pre>
-<code class="language-html">
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Java Web Application with Embedded Tomcat</title>
-	</head>
-	<body>
-		<h1>Hello, world!</h1>
-	</body>
-</html>
-</code>
+    <code class="language-markup">
+        <script type="prism-html-markup">
+        <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>Java Web Application with Embedded Tomcat</title>
+            </head>
+            <body>
+                <h1>Hello, world!</h1>
+            </body>
+        </html>
+        </script>
+    </code>
 </pre>
 <p>To build and run the application, run the following commands under the root directory of the project:</p>
 <pre>
@@ -90,4 +92,24 @@ java -jar ./target/java-web-app-with-embedded-tomcat-1.0.0-SNAPSHOT.jar
 </pre>
 <p>If the application starts successfully, open your browser: <a href="http://localhost:8080/app">http://localhost:8080/app</a>.</p>
 <p><img class="img-fluid" src="/assets/images/java-web-application-with-embedded-tomcat/1.PNG"></p>
+<h3>Add Servlet, JSPs and Other Classes</h3>
+<h4>Domain</h4>
+<h5>Book.java</h5>
+<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/domain/Book.java"></script>
+<h4>Repository</h4>
+<h5>BookRepository.java</h5>
+<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/repository/BookRepository.java"></script>
+<h5>BookRepositoryImpl.java</h5>
+<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/repository/BookRepositoryImpl.java"></script>
+<h4>Service</h4>
+<h5>BookService.java</h5>
+<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/service/BookService.java"></script>
+<h5>BookServiceImpl.java</h5>
+<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/service/BookServiceImpl.java"></script>
+<h4>Controller</h4>
+<h5>BaseController.java</h5>
+<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/controller/BaseController.java"></script>
+<h5>BookController.java</h5>
+<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/controller/BookController.java"></script>
+
 <p>To be continued...</p>
