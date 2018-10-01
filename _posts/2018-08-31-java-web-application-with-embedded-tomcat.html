@@ -57,9 +57,37 @@ Take note that our <span class="font-weight-bold">packaging</span> is jar</span>
 <p class="font-italic">Eclipse - File > Import... > Maven > Existing Maven Projects > Browse ... (for Root Directory) > Finish</p>
 <h3>Let's Start Coding</h3>
 <h4>Server</h4>
-<p>Create a package <span class="font-weight-bold font-italic">server</span> under <span class="font-weight-bold font-italic">app</span>. Under this package, we will have an interface <span class="font-weight-bold font-italic">Server</span> and class <span class="font-weight-bold font-italic">TomcatServer</span>. The interface will have one abstract method, <span class="font-weight-bold font-italic">run</span> which will serve as entry point to start out Tomcat server. This opens a possibility to add more servers other than Tomcat, either from scratch or use existing ones (Jetty, Undertow).</p>
+<p>Create a package <span class="font-weight-bold font-italic">server</span> under <span class="font-weight-bold font-italic">app</span>. Under this package, we will have an interface <span class="font-weight-bold font-italic">Server</span> and class <span class="font-weight-bold font-italic">TomcatServer</span>. The interface will have one abstract method, <span class="font-weight-bold font-italic">run</span> which will serve as entry point to start our Tomcat server. This opens a possibility to add more servers other than Tomcat, either from scratch or use existing ones (Jetty, Undertow).</p>
 <h5>Server.java</h5>
 <script src="http://gist-it.appspot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/server/Server.java"></script>
 <h5>TomcatServer.java</h5>
 <script src="http://gist-it.appspot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/server/TomcatServer.java"></script>
+<h5>Main.java</h5>
+<p>We will now create our main class as defined by <span class="font-weight-bold">mainClass</span> in pom.xml.</p>
+<p>As this class contains <span class="font-weight-bold font-italic">main</span> method, this will serve as entry point to start our application and the server. Here, we instantiate the <span class="font-weight-bold font-italic">TomcatServer</span> class and call <span class="font-weight-bold font-italic">run</span> method. We pass in <span class="font-weight-bold font-italic">args</span> argument from <span class="font-weight-bold font-italic">main</span> method to <span class="font-weight-bold font-italic">run</span> method. By default, the server will listen on port <span class="font-weight-bold font-italic">8080</span> but we can override it by passing desired port number to our <span class="font-weight-bold font-italic">main</span> method. This is optional, though (stick to 8080).</p>
+<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/Main.java"></script>
+<p>With the codes above, we can now build and run our application, but since there is no Servlet handler or default JSP page, it will just error page.</p>
+<p>To test our application, create a <span class="font-weight-bold font-italic">index.jsp</span> file inside <span class="font-weight-bold font-italic">webapp</span> folder.</p>
+<pre>
+<code class="language-html">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Java Web Application with Embedded Tomcat</title>
+	</head>
+	<body>
+		<h1>Hello, world!</h1>
+	</body>
+</html>
+</code>
+</pre>
+<p>To build and run the application, run the following commands under the root directory of the project:</p>
+<pre>
+mvn package
+java -jar ./target/java-web-app-with-embedded-tomcat-1.0.0-SNAPSHOT.jar
+</pre>
+<p>If the application starts successfully, open your browser: <a href="http://localhost:8080/app">http://localhost:8080/app</a>.</p>
+<p><img class="img-fluid" src="/assets/images/java-web-application-with-embedded-tomcat/1.PNG"></p>
 <p>To be continued...</p>
