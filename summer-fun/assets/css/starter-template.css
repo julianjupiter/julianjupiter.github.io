@@ -3,13 +3,7 @@ body {
   padding-top: 5rem;
 }
 
-.starter-template {
-  color: #9E9E9E;
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
-.starter-template > #title {
+.jumbotron-heading > #title {
   color: #FF9800;
 }
 
