@@ -3,7 +3,7 @@ body {
   padding-top: 5rem;
 }
 
-.jumbotron-heading > #title {
+#title.jumbotron-heading  {
   color: #FF9800;
 }
 

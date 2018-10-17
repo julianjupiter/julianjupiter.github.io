@@ -22,38 +22,19 @@
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-summer">
-        <a class="navbar-brand" href="/summerframework">Summer Fun</a>
+        <a class="navbar-brand" href="http://julianjupiter.github.io/summer-fun">Summer Fun</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/summer-fun/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/summer-fun/#about">About</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/julianjupiter/summer-fun">Download</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/summer-fun/#documentation">Documentation</a>
                 </li>
             </ul>
         </div>
     </nav>
-
-    <div class="container">
-
-        <div class="starter-template">
-            <h1 id="title">Summer Fun Microframework</h1>
-            <p class="lead">Summer Fun is a functional microframework for Java.</p>
-        </div>
-
-    </div>
-
     <main role="main">
         <section class="jumbotron text-center">
             <div class="container">
@@ -65,33 +46,29 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-body">
-                                <pre>
-                                    <code class="language-java">
-                                        import summer.fun.SummerFunApplication;
+                        <pre>
+                            <code class="language-java">
+                                import summer.fun.SummerFunApplication;
 
-                                        public class SampleApp {
-                                            public static void main(String[] args) {
-                                                SummerFunApplication app = new SummerFunApplication();
+                                public class SampleApp {
+                                    public static void main(String[] args) {
+                                        SummerFunApplication app = new SummerFunApplication();
 
-                                                app.get("/users", (request, response) -> {
-                                                    String users = "[{\"id\": 1, \"lastName\": \"Rizal\", \"firsName\": \"Jose\"}," +
-                                                        "{\"id\": 2, \"lastName\": \"Bonifacio\", \"firsName\": \"Andres\"}," +
-                                                        "{\"id\": 3, \"lastName\": \"Mabini\", \"firsName\": \"Apolinario\"}]";
-                                                    response.json(users);
-                                                });
+                                        app.get("/users", (request, response) -> {
+                                            String users = "[{\"id\": 1, \"lastName\": \"Rizal\", \"firsName\": \"Jose\"}," +
+                                                "{\"id\": 2, \"lastName\": \"Bonifacio\", \"firsName\": \"Andres\"}," +
+                                                "{\"id\": 3, \"lastName\": \"Mabini\", \"firsName\": \"Apolinario\"}]";
+                                            response.json(users);
+                                        });
 
-                                                app.run(() -> {
-                                                    System.out.println("Application is running on port " + app.getPort());
-                                                    System.out.println("Press any key to stop the server...");
-                                                });
-                                            }
-                                        }
-                                    </code>
-                                </pre>
-                            </div>
-                        </div>
+                                        app.run(() -> {
+                                            System.out.println("Application is running on port " + app.getPort());
+                                            System.out.println("Press any key to stop the server...");
+                                        });
+                                    }
+                                }
+                            </code>
+                        </pre>
                     </div>
                     <div class="col-md-8">
                         <div class="card mb-4 shadow-sm">
