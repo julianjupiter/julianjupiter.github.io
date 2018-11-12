@@ -69,23 +69,19 @@ Take note that our <span class="font-weight-bold">packaging</span> is jar</span>
 <script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/Main.java"></script>
 <p>With the codes above, we can now build and run our application, but since there is no Servlet handler or default JSP page, it will just error page.</p>
 <p>To test our application, create a <span class="font-weight-bold font-italic">index.jsp</span> file inside <span class="font-weight-bold font-italic">webapp</span> folder.</p>
-<pre>
-    <code class="language-markup">
-        <script type="prism-html-markup">
-        <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <meta charset="UTF-8">
-                <title>Java Web Application with Embedded Tomcat</title>
-            </head>
-            <body>
-                <h1>Hello, world!</h1>
-            </body>
-        </html>
-        </script>
-    </code>
-</pre>
+<script type="text/plain" class="language-markup">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Java Web Application with Embedded Tomcat</title>
+    </head>
+    <body>
+        <h1>Hello, world!</h1>
+    </body>
+</html>
+</script>
 <p>To build and run the application, run the following commands under the root directory of the project:</p>
 <pre>
 mvn package
