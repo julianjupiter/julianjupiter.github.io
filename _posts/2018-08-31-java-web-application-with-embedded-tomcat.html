@@ -47,7 +47,122 @@ java-web-app-with-embedded-tomcat
 └── pom.xml
 </pre>
 <p>Open <span class="font-weight-bold">pom.xml</span> using your favorite editor (mine is <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>). Copy and paste the following XML.</p>
-<script src="http://gist-it.appspot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/pom.xml"></script>
+<script type="text/plain" class="language-markup">
+    <project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.github.julianjupiter</groupId>
+	<artifactId>java-web-app-with-embedded-tomcat</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>java-web-app-with-embedded-tomcat</name>
+	<description>Java Web Application with Embedded Tomcat.</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<tomcat.version>9.0.13</tomcat.version>
+        <slf4j.version>1.7.25</slf4j.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<version>${tomcat.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<version>${tomcat.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>javax.json.bind</groupId>
+		    <artifactId>javax.json.bind-api</artifactId>
+		    <version>1.0</version>
+		</dependency>				
+		<dependency>
+		    <groupId>org.eclipse</groupId>
+		    <artifactId>yasson</artifactId>
+		    <version>1.0.2</version>
+		</dependency>		
+		<dependency>
+		    <groupId>org.glassfish</groupId>
+		    <artifactId>javax.json</artifactId>
+		    <version>1.1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/webapp</directory>
+				<targetPath>META-INF/resources</targetPath>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.1.1</version>
+				<configuration>
+					<createDependencyReducedPom>true</createDependencyReducedPom>
+					<filters>
+						<filter>
+							<artifact>*:*</artifact>
+							<excludes>
+								<exclude>META-INF/*.SF</exclude>
+								<exclude>META-INF/*.DSA</exclude>
+								<exclude>META-INF/*.RSA</exclude>
+							</excludes>
+						</filter>
+					</filters>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<createDependencyReducedPom>false</createDependencyReducedPom>
+							<transformers>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>io.github.julianjupiter.app.Main</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>    
+</project>
+</script>
 <p>
 Take note that our <span class="font-weight-bold">packaging</span> is jar</span> and we are using <span class="font-weight-bold">Maven Shade Plugin</span> here to package our application into JAR. From its website, it reads: <span class="font-italic">This plugin provides the capability to package the artifact in an uber-jar, including its dependencies and to shade - i.e. rename - the packages of some of the dependencies.</span>
 </p>
@@ -60,13 +175,109 @@ Take note that our <span class="font-weight-bold">packaging</span> is jar</span>
 <h4>Server</h4>
 <p>Create a package <span class="font-weight-bold font-italic">server</span> under <span class="font-weight-bold font-italic">app</span>. Under this package, we will have an interface <span class="font-weight-bold font-italic">Server</span> and class <span class="font-weight-bold font-italic">TomcatServer</span>. The interface will have one abstract method, <span class="font-weight-bold font-italic">run</span> which will serve as entry point to start our Tomcat server. This opens a possibility to add more servers other than Tomcat, either from scratch or use existing ones (Jetty, Undertow).</p>
 <h5>Server.java</h5>
-<script src="http://gist-it.appspot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/server/Server.java"></script>
+<script type="text/plain" class="language-java">
+package io.github.julianjupiter.app.server;
+
+public interface Server {
+    public void run(String[] args);
+}    
+</script>
 <h5>TomcatServer.java</h5>
-<script src="http://gist-it.appspot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/server/TomcatServer.java"></script>
+<script type="text/plain" class="language-java">
+package io.github.julianjupiter.app.server;
+
+import java.io.File;
+
+import org.apache.catalina.Context;
+import org.apache.catalina.LifecycleException;
+import org.apache.catalina.WebResourceRoot;
+import org.apache.catalina.startup.Tomcat;
+import org.apache.catalina.webresources.DirResourceSet;
+import org.apache.catalina.webresources.StandardRoot;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class TomcatServer implements Server {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(TomcatServer.class);
+    private static final String DEFAULT_HOST = "localhost";
+    private static final int DEFAULT_PORT = 8080;
+    private static final String DEFAULT_CONTEXT_PATH = "/app";
+    private static final String DOC_BASE = ".";
+    private static final String ADDITION_WEB_INF_CLASSES = "target/classes";
+    private static final String WEB_APP_MOUNT = "/WEB-INF/classes";
+    private static final String INTERNAL_PATH = "/";
+
+    @Override
+    public void run(String[] args) {
+        int port = port(args);
+        Tomcat tomcat = tomcat(port);
+
+        try {
+            tomcat.start();
+        } catch (LifecycleException exception) {
+            LOGGER.error("{}", exception.getMessage());
+            LOGGER.error("Exit...");
+            System.exit(1);
+        }
+
+        LOGGER.info("Application started with URL {}.", DEFAULT_HOST + ":" + port + DEFAULT_CONTEXT_PATH);
+        LOGGER.info("Hit Ctrl + D or C to stop it...");
+        tomcat.getServer().await();
+    }
+
+    private int port(String[] args) {
+        if (args.length > 0) {
+            String port = args[0];
+            try {
+                return Integer.valueOf(port);
+            } catch (NumberFormatException exception) {
+                LOGGER.error("Invalid port number argument {}", port, exception);
+            }
+        }
+
+        return DEFAULT_PORT;
+    }
+
+    private Tomcat tomcat(int port) {
+        Tomcat tomcat = new Tomcat();
+        tomcat.setHostname(DEFAULT_HOST);
+        tomcat.getHost().setAppBase(DOC_BASE);
+        tomcat.setPort(port);
+        tomcat.getConnector();
+        context(tomcat);
+
+        return tomcat;
+    }
+
+    private Context context(Tomcat tomcat) {
+        Context context = tomcat.addWebapp(DEFAULT_CONTEXT_PATH, DOC_BASE);
+        File classes = new File(ADDITION_WEB_INF_CLASSES);
+        String base = classes.getAbsolutePath();
+        WebResourceRoot resources = new StandardRoot(context);
+        resources.addPreResources(new DirResourceSet(resources, WEB_APP_MOUNT, base, INTERNAL_PATH));
+        context.setResources(resources);
+
+        return context;
+    }
+}    
+</script>
 <h5>Main.java</h5>
 <p>We will now create our main class as defined by <span class="font-weight-bold">mainClass</span> in pom.xml.</p>
 <p>As this class contains <span class="font-weight-bold font-italic">main</span> method, this will serve as entry point to start our application and the server. Here, we instantiate the <span class="font-weight-bold font-italic">TomcatServer</span> class and call <span class="font-weight-bold font-italic">run</span> method. We pass in <span class="font-weight-bold font-italic">args</span> argument from <span class="font-weight-bold font-italic">main</span> method to <span class="font-weight-bold font-italic">run</span> method. By default, the server will listen on port <span class="font-weight-bold font-italic">8080</span> but we can override it by passing desired port number to our <span class="font-weight-bold font-italic">main</span> method. This is optional, though (stick to 8080).</p>
-<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/Main.java"></script>
+<script type="text/plain" class="language-java">
+package io.github.julianjupiter.app;
+
+import io.github.julianjupiter.app.server.Server;
+import io.github.julianjupiter.app.server.TomcatServer;
+
+public class Main {
+    public static void main(String[] args) {
+        Server app = new TomcatServer();
+        app.run(args);
+    }
+}    
+</script>
 <p>With the codes above, we can now build and run our application, but since there is no Servlet handler or default JSP page, it will just error page.</p>
 <p>To test our application, create a <span class="font-weight-bold font-italic">index.jsp</span> file inside <span class="font-weight-bold font-italic">webapp</span> folder.</p>
 <script type="text/plain" class="language-markup">
@@ -83,30 +294,331 @@ Take note that our <span class="font-weight-bold">packaging</span> is jar</span>
 </html>
 </script>
 <p>To build and run the application, run the following commands under the root directory of the project:</p>
-<pre>
+<script type="text/plain" class="language-bash">
 mvn package
 java -jar ./target/java-web-app-with-embedded-tomcat-1.0.0-SNAPSHOT.jar
-</pre>
+</script>
 <p>If the application starts successfully, open your browser: <a href="http://localhost:8080/app">http://localhost:8080/app</a>.</p>
 <p><img class="img-fluid" src="/assets/images/java-web-application-with-embedded-tomcat/1.PNG"></p>
 <h3>Add Servlet, JSPs and Other Classes</h3>
 <h4>Domain</h4>
 <h5>Book.java</h5>
-<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/domain/Book.java"></script>
+<script type="text/plain" class="language-java">
+package io.github.julianjupiter.app.domain;
+
+import javax.json.bind.annotation.JsonbNillable;
+
+@JsonbNillable
+public class Book {
+    private long id;
+    private String title;
+    private String edition;
+    
+    private String isbn;
+    private String author;
+    private String yearPublished;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+    
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getEdition() {
+        return edition;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getYearPublished() {
+        return yearPublished;
+    }
+
+    public void setYearPublished(String yearPublished) {
+        this.yearPublished = yearPublished;
+    }
+}    
+</script>
 <h4>Repository</h4>
 <h5>BookRepository.java</h5>
-<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/repository/BookRepository.java"></script>
+<script type="text/plain" class="language-java">
+package io.github.julianjupiter.app.repository;
+
+import java.util.Optional;
+
+import io.github.julianjupiter.app.domain.Book;
+
+public interface BookRepository {
+    
+    Iterable<Book> findAll();
+
+    Optional<Book> findById(long id);
+    
+}
+</script>
 <h5>BookRepositoryImpl.java</h5>
-<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/repository/BookRepositoryImpl.java"></script>
+<script type="text/plain" class="language-java">
+package io.github.julianjupiter.app.repository;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+import io.github.julianjupiter.app.domain.Book;
+
+public class BookRepositoryImpl implements BookRepository {
+    
+    private static List<Book> bookList = new ArrayList<>();
+    
+    static {
+        Book book1 = new Book();
+        book1.setId(1L);
+        book1.setTitle("Beginning Spring Boot 2");
+        book1.setIsbn("978-1-4842-2930-9");
+        book1.setAuthor("K. Siva Prasad Reddy");
+        book1.setYearPublished("2017");
+
+        Book book2 = new Book();
+        book2.setId(2L);
+        book2.setTitle("Effective Java");
+        book2.setEdition("Third Edition");
+        book2.setIsbn("978-0-13-468599-1");
+        book2.setAuthor("Joshua Block");
+        book2.setYearPublished("2018");
+        
+        Book[] books = { book1, book2 };
+        bookList = Arrays.asList(books);
+    }
+
+    @Override
+    public Iterable<Book> findAll() {
+        return bookList;
+    }
+
+    @Override
+    public Optional<Book> findById(long id) {
+        return bookList.stream()
+            .filter(book -> book.getId() == id)
+            .findFirst();
+    }
+
+}
+</script>
 <h4>Service</h4>
 <h5>BookService.java</h5>
-<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/service/BookService.java"></script>
+<script type="text/plain" class="language-java">
+package io.github.julianjupiter.app.service;
+
+import java.util.Optional;
+
+import io.github.julianjupiter.app.domain.Book;
+
+public interface BookService {
+    
+    Iterable<Book> findAll();
+
+    Optional<Book> findById(long id);
+    
+}
+</script>
 <h5>BookServiceImpl.java</h5>
-<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/service/BookServiceImpl.java"></script>
+<script type="text/plain" class="language-java">
+package io.github.julianjupiter.app.service;
+
+import java.util.Optional;
+
+import io.github.julianjupiter.app.domain.Book;
+import io.github.julianjupiter.app.repository.BookRepository;
+
+public class BookServiceImpl implements BookService {
+    
+    private BookRepository bookRepository;
+    
+    public BookServiceImpl(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
+    @Override
+    public Iterable<Book> findAll() {
+        return this.bookRepository.findAll();
+    }
+
+    @Override
+    public Optional<Book> findById(long id) {
+        return this.bookRepository.findById(id);
+    }
+
+}
+</script>
 <h4>Controller</h4>
 <h5>BaseController.java</h5>
-<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/controller/BaseController.java"></script>
+<script type="text/plain" class="language-java">
+package io.github.julianjupiter.app.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class BaseController extends HttpServlet {
+
+    private static final long serialVersionUID = 632349127293785744L;
+    private static final String VIEW_PREFIX = "/WEB-INF/templates/";
+    private static final String VIEW_SUFFIX = ".jsp";
+    
+    protected String getAction(HttpServletRequest request) {
+        String action = request.getParameter("action");
+        
+        return (action == null) || action.isEmpty() ? "" : action;
+    }
+
+    protected void render(HttpServletRequest request, HttpServletResponse response, String template) throws ServletException, IOException {
+        getServletContext().getRequestDispatcher(VIEW_PREFIX + template + VIEW_SUFFIX).forward(request, response);
+    }
+
+    public void redirect(HttpServletResponse response, String path) throws IOException {
+        response.sendRedirect(path);
+    }
+    
+}
+</script>
 <h5>BookController.java</h5>
-<script src="http://gist-it.appshot.com/https://github.com/julianjupiter/java-web-app-with-embedded-tomcat/blob/master/src/main/java/io/github/julianjupiter/app/controller/BookController.java"></script>
+<script type="text/plain" class="language-java">
+package io.github.julianjupiter.app.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.ZonedDateTime;
+import java.util.Optional;
+
+import javax.json.bind.Jsonb;
+import javax.json.bind.JsonbBuilder;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import io.github.julianjupiter.app.domain.Book;
+import io.github.julianjupiter.app.repository.BookRepositoryImpl;
+import io.github.julianjupiter.app.service.BookService;
+import io.github.julianjupiter.app.service.BookServiceImpl;
+import io.github.julianjupiter.app.util.Error;
+import io.github.julianjupiter.app.util.ErrorResponse;
+
+@WebServlet(name = "bookController", urlPatterns = "/books")
+public class BookController extends BaseController {
+
+    private static final long serialVersionUID = -8199839431714257029L;
+    private static final Logger LOGGER = LoggerFactory.getLogger(BookController.class);
+    private final BookService bookService;
+    
+    public BookController() {
+        this.bookService = new BookServiceImpl(new BookRepositoryImpl());
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = this.getAction(request);
+        switch (action) {
+            case "": 
+            case "list":
+                try {
+                    this.findAll(request, response);
+                } catch (Exception exception) {
+                    LOGGER.error(exception.getMessage());
+                }
+                
+                break;
+            case "view":
+                try {
+                    this.findById(request, response);
+                } catch (Exception exception) {
+                    LOGGER.error(exception.getMessage());
+                }
+                
+                break;
+    
+            default:
+                try {
+                    response.setStatus(404);
+                    this.render(request, response, "error/404");
+                } catch (Exception exception) {
+                    LOGGER.error(exception.getMessage());
+                }
+                
+                break;
+        }
+        
+    }
+    
+    private void findAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Iterable<Book> books = this.bookService.findAll();
+        request.setAttribute("pageName", "Books");
+        request.setAttribute("books", books);
+        this.render(request, response, "book/list");
+    }
+    
+    private void findById(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String id = request.getParameter("id");
+        long bookId = Long.parseLong(id);
+        Optional<Book> book = this.bookService.findById(bookId);
+        String bookJson;
+        try(Jsonb jsonbObject = JsonbBuilder.create()) {
+            if (book.isPresent()) {
+                response.setStatus(200);
+                bookJson = jsonbObject.toJson(book.get());
+            } else {
+                response.setStatus(404);
+                ErrorResponse errorResponse = new ErrorResponse();
+                Error error = new Error();
+                error.setMessage("Book with ID " + id + " was not found.");
+                error.setCreatedAt(ZonedDateTime.now());
+                errorResponse.setError(error);
+                bookJson = jsonbObject.toJson(error);
+            }
+        }
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.print(bookJson);
+        out.flush();
+    }
+
+}
+</script>
 
 <p>To be continued...</p>
