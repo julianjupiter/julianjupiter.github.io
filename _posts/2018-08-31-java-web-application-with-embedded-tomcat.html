@@ -627,7 +627,7 @@ java -jar ./target/java-web-app-with-embedded-tomcat-1.0.0-SNAPSHOT.jar
 </script>
 <h4>Templates</h4>
 <p>Our templates will be written in JSP.</p>
-<p>Let's create first <span class="font-weight-bold font-italic">templates</span> folder under <span class="font-weight-bold font-italic">/webapp/WEB-INF</span>. Under this new folder, we'll create four (4) folders - book, components, error, and includes.</p>
+<p>Let's create first <span class="font-weight-bold font-italic">templates</span> folder under <span class="font-weight-bold font-italic">/webapp/WEB-INF</span>. Under this new folder, we'll create four (4) folders - <span class="font-weight-bold font-italic">book</span>, <span class="font-weight-bold font-italic">components</span>, <span class="font-weight-bold font-italic">error</span>, and <span class="font-weight-bold font-italic">includes</span>.</p>
 <p>The new structure of our Maven project:</p>
 <pre>
     java-web-app-with-embedded-tomcat
@@ -822,7 +822,7 @@ java -jar ./target/java-web-app-with-embedded-tomcat-1.0.0-SNAPSHOT.jar
 </script>
 <h4>Default Page</h4>
 <h5>index.jsp</h5>
-<p>This is the default page in our application when we access <a href="http://localhost:8080/app">http://localhost:8080/app</a>.</p>
+<p>This is the default page in our application if we access <a href="http://localhost:8080/app">http://localhost:8080/app</a>.</p>
 <p>Remember the <span class="font-weight-bold font-italic">index.jsp</span> that we created earlier to test our application? We just need to modify that file.</p>
 <script type="text/plain" class="language-markup">
     <jsp:include page="/WEB-INF/templates/includes/header.jsp">
@@ -839,7 +839,7 @@ java -jar ./target/java-web-app-with-embedded-tomcat-1.0.0-SNAPSHOT.jar
 </script>
 <h4>Static Files</h4>
 <p>Our pages will make use of JavaScript and CSS. It includes Bootstrap CSS framework, hence, the need to import them.</p>
-<p>Let's create assets</span> folder under <span class="font-weight-bold font-italic">/webapp</span>. Under this new folder, we'll create three (3) folders - css, js, error, and vendor.</p>
+<p>Let's create <span class="font-weight-bold font-italic">assets</span> folder under <span class="font-weight-bold font-italic">/webapp</span>. Under this new folder, we'll create three (3) folders - <span class="font-weight-bold font-italic">css</span>, <span class="font-weight-bold font-italic">js</span>, and <span class="font-weight-bold font-italic">vendor</span>.</p>
 <p>Our custom styling and JavaScript files will, obviously, be put inside <span class="font-weight-bold font-italic">css</span> and <span class="font-weight-bold font-italic">js</span> folders, respectively, while the third-party ones, Bootstrap, jQuery, Popper.js, will be in <span class="font-weight-bold font-italic">vendor</span> folder.</p>
 <p>The new structure of our Maven project:</p>
 <pre>
@@ -947,8 +947,7 @@ java -jar ./target/java-web-app-with-embedded-tomcat-1.0.0-SNAPSHOT.jar
         });
     });
 </script>
-<h5>js</h5>
-<h6>main.js</h6>
+<h5>vendor</h5>
 <p>For the <a href="https://getbootstrap.com">Bootstrap</a>, <a href="https://jquery.com/">jQuery</a>, and <a href="https://popper.js.org/">Popper.js</a>, you can download them from their respective sites.</p>
 <p>Check <span class="font-weight-bold font-italic">header.jsp</span> and <span class="font-weight-bold font-italic">footer.jsp</span> files how these frameworks/libraries structured in our project.</p>
 <h4>Re-build and Run our Application</h4>
@@ -959,11 +958,11 @@ java -jar ./target/java-web-app-with-embedded-tomcat-1.0.0-SNAPSHOT.jar
 </script>
 <h4>Screenshots</h4>
 <h5>Home Page</h5>
-<p><img class="img-fluid" src="/assets/images/java-web-application-with-embedded-tomcat/2.png"></p>
+<p><img class="img-fluid" src="/assets/images/java-web-application-with-embedded-tomcat/2.PNG"></p>
 <h5>List of Books</h5>
-<p><img class="img-fluid" src="/assets/images/java-web-application-with-embedded-tomcat/3.png"></p>
+<p><img class="img-fluid" src="/assets/images/java-web-application-with-embedded-tomcat/3.PNG"></p>
 <h5>View a Book</h5>
-<p><img class="img-fluid" src="/assets/images/java-web-application-with-embedded-tomcat/4.png"></p>
+<p><img class="img-fluid" src="/assets/images/java-web-application-with-embedded-tomcat/4.PNG"></p>
 <h4>Conclusion</h4>
 <p>We're able to create a Servlet application in which we use Embedded Tomcat Server. We build this application into a single JAR file, called Uber or Fat JAR.</p>
 <p>With this, we no longer need a standalone web server to deploy our application to. We achieved this mechanism by using <a href="https://maven.apache.org/plugins/maven-shade-plugin/">Maven Shade Plugin</a>.</p>
