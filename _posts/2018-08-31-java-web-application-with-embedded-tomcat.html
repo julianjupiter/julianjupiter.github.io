@@ -301,8 +301,9 @@ java -jar ./target/java-web-app-with-embedded-tomcat-1.0.0-SNAPSHOT.jar
 <p>If the application starts successfully, open your browser: <a href="http://localhost:8080/app">http://localhost:8080/app</a>.</p>
 <p><img class="img-fluid" src="/assets/images/java-web-application-with-embedded-tomcat/1.PNG"></p>
 <h3>Add Servlet, JSPs and Other Classes</h3>
-<h4>Domain</h4>
+<h4>Domain Model</h4>
 <h5>Book.java</h5>
+<p>This class is simply a POJO as state container of our data.</p>
 <script type="text/plain" class="language-java">
 package io.github.julianjupiter.app.domain;
 
@@ -368,6 +369,7 @@ public class Book {
 }    
 </script>
 <h4>Repository</h4>
+<p>These serve our repository. However, the data is just a dummy for this demo.</p>
 <h5>BookRepository.java</h5>
 <script type="text/plain" class="language-java">
 package io.github.julianjupiter.app.repository;
@@ -434,6 +436,7 @@ public class BookRepositoryImpl implements BookRepository {
 }
 </script>
 <h4>Service</h4>
+<p>These serve as intermediary between our controller and repository.</p>
 <h5>BookService.java</h5>
 <script type="text/plain" class="language-java">
 package io.github.julianjupiter.app.service;
@@ -481,6 +484,7 @@ public class BookServiceImpl implements BookService {
 </script>
 <h4>Controller</h4>
 <h5>BaseController.java</h5>
+<p>We'll create a base controller that will contain common properties and methods to be used by our controller. We extends this class with <span class="font-weight-bold font-italic">HttpServlet</span> so that any class (controller) that extends it becomes an HttpServlet too.</p>
 <script type="text/plain" class="language-java">
 package io.github.julianjupiter.app.controller;
 
@@ -514,6 +518,7 @@ public class BaseController extends HttpServlet {
 }
 </script>
 <h5>BookController.java</h5>
+<p>The <span class="font-weight-bold font-italic">BookController</span> extends <span class="font-weight-bold font-italic">BaseController<span class="font-weight-bold font-italic"> class to become a Servlet. This will serve as the controller. Since our application will only display list of books and individual book, only <span class="font-weight-bold font-italic">doGet</span> method will be implemented. This method intercepts all <span class="font-weight-bold font-italic">HTTP GET</span> request.</p>
 <script type="text/plain" class="language-java">
 package io.github.julianjupiter.app.controller;
 
@@ -620,5 +625,6 @@ public class BookController extends BaseController {
 
 }
 </script>
-
+<h4>Templates</h4>
+<p>Our templates will be written in JSP.</p>
 <p>To be continued...</p>
