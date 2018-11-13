@@ -484,7 +484,7 @@ public class BookServiceImpl implements BookService {
 </script>
 <h4>Controller</h4>
 <h5>BaseController.java</h5>
-<p>We'll create a base controller that will contain common properties and methods to be used by our controller. We extends this class with <span class="font-weight-bold font-italic">HttpServlet</span> so that any class (controller) that extends it becomes an HttpServlet too.</p>
+<p>We'll create a base controller that will contain common properties and methods to be used by our controller. We extends this class with <span class="font-weight-bold font-italic">HttpServlet</span> so that any class (controller) that extends it becomes an Servlet too.</p>
 <script type="text/plain" class="language-java">
 package io.github.julianjupiter.app.controller;
 
@@ -518,7 +518,7 @@ public class BaseController extends HttpServlet {
 }
 </script>
 <h5>BookController.java</h5>
-<p>The <span class="font-weight-bold font-italic">BookController</span> extends <span class="font-weight-bold font-italic">BaseController<span class="font-weight-bold font-italic"> class to become a Servlet. This will serve as the controller. Since our application will only display list of books and individual book, only <span class="font-weight-bold font-italic">doGet</span> method will be implemented. This method intercepts all <span class="font-weight-bold font-italic">HTTP GET</span> request.</p>
+<p>The <span class="font-weight-bold font-italic">BookController</span> extends <span class="font-weight-bold font-italic">BaseController</span> class to become a Servlet. This will serve as the controller. Since our application will only display list of books and individual book, only <span class="font-weight-bold font-italic">doGet</span> method will be implemented. This method intercepts all <span class="font-weight-bold font-italic">HTTP GET</span> request.</p>
 <script type="text/plain" class="language-java">
 package io.github.julianjupiter.app.controller;
 
