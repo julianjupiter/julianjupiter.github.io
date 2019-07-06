@@ -1,0 +1,79 @@
+---
+layout: post
+title: Java 8 New Language Features
+date: 2019-07-06
+description: This post discusses the new features introduced to Java 8 language.
+keywords: java, java 8, lambda, functional, optional
+---
+
+<h3>Overview</h3>
+<p>This post discusses the new language features of Java 8. Java 8's release is the most awaited and is a major feature
+    release of Java programming language.</p>
+<p>These new features include functional interfaces, interface default method, lambda expressions, method references,
+    Optional, and Stream API. We will also talk about the new Data and Time API.</p>
+<h3>Functional Interface</h3>
+<p>Functional Interface is an interface with single abstract method (SAM). Static or the new default method is not
+    counted. To indicate that an interface is a Functional Interface, annotation @FunctionalInterface on class level is
+    needed. While an interface with SAM could still function as Functional Interface (qualified as lambda expression)
+    even if it does not have such
+    annotation (example is AWT's ActionListener), it is recommened that it be annotated.</p>
+<p>Some old built-in interfaces with SAM, such as Comparator and Runnable, have been annotated with @FunctionalInterface
+    and can be used as lambda expressions</p>
+<h4>Example</h4>
+<script type="text/plain" class="language-java">
+    @FunctionalInterface
+	public interface Calculator {
+	    double calculate(double x, double y);
+	}
+</script>
+<h3>Lambda Expressions</h3>
+<p>Lambda expressions encapsulate a single unit of behavior and pass it to other code. To be able to create lambda
+    expression, you need first a Funtional Interface. This is the reason why a
+    Functional Interface has a single abstract method. Instead of an anonymous class, lambda expression is a concise
+    alternative and therefore shorthand replacement for it.</p>
+<h4>Syntax</h4>
+<script type="text/plain" class="language-java">
+    parameter -> expression or statement body
+</script>
+<h4>Example</h4>
+<script type="text/plain" class="language-java">
+    (Integer x) -> { return x; };
+</script>
+<h4>Characteristics of Lambda Expression</h4>
+<ol>
+    <li>Optional type declaration<br>
+        <script type="text/plain" class="language-java">
+            (x) -> { return x; };
+        </script>
+    </li>
+    <li>Optional parentheses<br>
+        <script type="text/plain" class="language-java">
+            x -> { return x; };
+        </script>
+        <p>Paretheses are required if there are multiple parameters. Parameters are separated by comma (,).</p>
+        <script type="text/plain" class="language-java">
+            (x, y) -> { return x + y; };
+        </script>
+    </li>
+    <li>Optional curly braces ({}) and optional return keyword<br>
+        <script type="text/plain" class="language-java">
+            x -> x;
+        </script>
+        <p>Curly braces are required if body has multiple statements. return keyword is required for a function with
+            return value if body has multiple statements. No return keyword is required if function does not return a
+            value as in regular method.</p>
+        <script type="text/plain" class="language-java">
+                x -> {
+                    System.out.println("Hello world!");
+                    return x;
+                };
+            </script>
+        <script type="text/plain" class="language-java">
+                x -> {
+                    System.out.println("Hello world!");
+                    System.out.println("Welcome to Java 8 Programming!");
+                };
+            </script>
+    </li>
+</ol>
+<p>To be continued...</p>
