@@ -9,15 +9,24 @@ keywords: java, java 8, lambda, functional, optional
 <h3>Overview</h3>
 <p>This post discusses the new language features of Java 8. Java 8's release is the most awaited and is a major feature
     release of Java programming language.</p>
-<p>These new features include functional interfaces, interface default method, lambda expressions, method references,
-    Optional, and Stream API. We will also talk about the new Data and Time API.</p>
+<p>These new features include <span class="font-weight-bold">functional interfaces</span>, <span
+        class="font-weight-bold">interface default method</span>, <span class="font-weight-bold">lambda
+        expressions</span>, <span class="font-weight-bold">method references</span>,
+    <span class="font-weight-bold">Optional</span>, and <span class="font-weight-bold">Stream API</span>. We will also
+    talk about some of <span class="font-weight-bold">built-in functions</span> that implement Function Interface and
+    the <span class="font-weight-bold">New Date and Time API</span>.</p>
 <h3>Functional Interface</h3>
-<p>Functional Interface is an interface with single abstract method (SAM). Static or the new default method is not
-    counted. To indicate that an interface is a Functional Interface, annotation @FunctionalInterface on class level is
+<p>Functional Interface is an interface with <span class="font-weight-bold">single abstract method (SAM)</span>. Static
+    or the new default method is not
+    counted. To indicate that an interface is a Functional Interface, annotation <span
+        class="inline-code">@FunctionalInterface</span> on class level is
     needed. While an interface with SAM could still function as Functional Interface (qualified as lambda expression)
     even if it does not have such
-    annotation (example is AWT's ActionListener), it is recommened that it be annotated.</p>
-<p>Some old built-in interfaces with SAM, such as Comparator and Runnable, have been annotated with @FunctionalInterface
+    annotation (example is AWT's <span class="inline-code">ActionListener</span>), it is recommened that it be
+    annotated.</p>
+<p>Some old built-in interfaces with SAM, such as <span class="inline-code">Comparator</span> and <span
+        class="inline-code">Runnable</span>, have been annotated with <span
+        class="inline-code">@FunctionalInterface</span>
     and can be used as lambda expressions</p>
 <h4>Example</h4>
 <script type="text/plain" class="language-java">
@@ -29,8 +38,9 @@ keywords: java, java 8, lambda, functional, optional
 <h3>Lambda Expressions</h3>
 <p>Lambda expressions encapsulate a single unit of behavior and pass it to other code. To be able to create lambda
     expression, you need first a Funtional Interface. This is the reason why a
-    Functional Interface has a single abstract method. Instead of an anonymous class, lambda expression is a concise
-    alternative and therefore shorthand replacement for it.</p>
+    Functional Interface has a single abstract method. Instead of an anonymous class, you can use lambda expression
+    which concise
+    alternative and shorthand replacement for it.</p>
 <h4>Syntax</h4>
 <script type="text/plain" class="language-java">
     parameter -> expression or statement body
@@ -50,17 +60,21 @@ keywords: java, java 8, lambda, functional, optional
         <script type="text/plain" class="language-java">
             x -> { return x; };
         </script>
-        <p>Paretheses are required if there are multiple parameters. Parameters are separated by comma (,).</p>
+        <p>Parentheses are required if there are multiple parameters. Parameters are separated by comma (<span
+                class="inline-code">,</span>).</p>
         <script type="text/plain" class="language-java">
             (x, y) -> { return x + y; };
         </script>
     </li>
-    <li>Optional curly braces ({}) and optional return keyword<br>
+    <li>Optional curly braces (<span class="inline-code">{}</span>) and optional <span class="inline-code">return</span>
+        keyword<br>
         <script type="text/plain" class="language-java">
             x -> x;
         </script>
-        <p>Curly braces are required if body has multiple statements. return keyword is required for a function with
-            return value if body has multiple statements. No return keyword is required if function does not return a
+        <p>Curly braces are required if body has multiple statements. <span class="inline-code">return</span> keyword is
+            required for a function with
+            return value if body has multiple statements. No <span class="inline-code">return</span> keyword is required
+            if function does not return a
             value as in regular method.</p>
         <script type="text/plain" class="language-java">
                 x -> {
@@ -76,4 +90,36 @@ keywords: java, java 8, lambda, functional, optional
             </script>
     </li>
 </ol>
+<h3>Built-in Functions</h3>
+<p>Java 8 ships 43 built-in functions under <span class="inline-code">java.util.function</span> package. Thirty eight
+    (38) of them are specialization for
+    primitive and other functions.</p>
+<p>The following are the basic functions:</p>
+<ul>
+    <li><span class="inline-code">Function</span></li>
+    <li><span class="inline-code">Consumer</span></li>
+    <li><span class="inline-code">Supplier</span></li>
+    <li><span class="inline-code">Predicate</span></li>
+</ul>
+<h4>Function</h4>
+<p>Function represents a function that accepts one argument and produces a result.</p>
+<ul>
+    <li>Abstract method
+        <ul>
+            <li><span class="inline-code">apply(T t)</span></li>
+        </ul>
+    </li>
+    <li>Default methods
+        <ul>
+            <li><span class="inline-code">compose(Function
+                    <? super V,? extends T> before)</span></li>
+            <li><span class="inline-code">andThen(Function<? super R,? extends V> after)</span></li>
+        </ul>
+    </li>
+    <li>Static method
+        <ul>
+            <li><span class="inline-code">indentity()</span></li>
+        </ul>
+    </li>
+</ul>
 <p>To be continued...</p>

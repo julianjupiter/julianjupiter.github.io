@@ -35,3 +35,7 @@
   footer p {
     margin-bottom: .25rem;
   }
+
+  .inline-code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
