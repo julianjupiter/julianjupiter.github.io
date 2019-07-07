@@ -35,12 +35,40 @@ keywords: java, java 8, lambda, functional, optional
 	    double calculate(double x, double y);
 	}
 </script>
+<p>We can implement above interface in two ways prior to Java 8.</p>
+<ul>
+    <li>Anonymous class
+        <script type="text/plain" class="language-java">
+            Calculator division = new Calculator() {
+                @Override
+                 public double calculate(double x, double y) {
+                    return x / y;
+                 }
+            };
+        
+            double quotient = division.calculate(10, 2);
+        </script>
+    </li>
+    <li>Concrete class
+        <script type="text/plain" class="language-java">
+            class Division implements Calculator {
+                @Override
+                public double calculate(double x, double y) {
+                    return x / y;
+                }
+            }
+        </script>
+        <script type="text/plain" class="language-java">
+            Calculator division = new Division() ;
+            double quotient = division.calculate(10, 2);
+        </script>
+    </li>
+</ul>
 <h3>Lambda Expressions</h3>
 <p>Lambda expressions encapsulate a single unit of behavior and pass it to other code. To be able to create lambda
     expression, you need first a Funtional Interface. This is the reason why a
     Functional Interface has a single abstract method. Instead of an anonymous class, you can use lambda expression
-    which concise
-    alternative and shorthand replacement for it.</p>
+    which is a concise alternative and shorthand replacement for it.</p>
 <h4>Syntax</h4>
 <script type="text/plain" class="language-java">
     parameter -> expression or statement body
@@ -105,33 +133,22 @@ keywords: java, java 8, lambda, functional, optional
 <p>Function represents a function that accepts one argument and produces a result.</p>
 <ul>
     <li>Abstract method
-        <ul>
-            <li><span class="inline-code">apply(T t)</span></li>
-        </ul>
+        <script type="text/plain" class="language-java">
+            apply(T t)
+        </script>
     </li>
     <li>Default methods
-        <ul>
-            <li>
-                <script type="text/plain" class="language-java">
-                    compose(Function
-                    <? super V,? extends T> before)
-                </script>
-            </li>
-            <li>
-                <script type="text/plain" class="language-java">
-                    andThen(Function<? super R,? extends V> after)
-                </script>
-            </li>
-        </ul>
+        <script type="text/plain" class="language-java">
+            compose(Function <? super V,? extends T> before)
+        </script>
+        <script type="text/plain" class="language-java">
+            andThen(Function<? super R,? extends V> after)
+        </script>
     </li>
     <li>Static method
-        <ul>
-            <li>
-                <script type="text/plain" class="language-java">
-                    indentity()
-                </script>
-            </li>
-        </ul>
+        <script type="text/plain" class="language-java">
+            indentity()
+        </script>
     </li>
 </ul>
 <p>To be continued...</p>
