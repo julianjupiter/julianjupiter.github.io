@@ -32,7 +32,7 @@ keywords: java, java 8, lambda, functional, optional
 <script type="text/plain" class="language-java">
     @FunctionalInterface
 	public interface Calculator {
-	    double calculate(double x, double y);
+	    long calculate(long x, long y);
 	}
 </script>
 <p>We can implement above interface in two ways prior to Java 8.</p>
@@ -41,29 +41,31 @@ keywords: java, java 8, lambda, functional, optional
         <script type="text/plain" class="language-java">
             Calculator division = new Calculator() {
                 @Override
-                 public double calculate(double x, double y) {
+                 public long calculate(long x, long y) {
                     return x / y;
                  }
             };
         
-            double quotient = division.calculate(10, 2);
+            long quotient = division.calculate(10, 2);
         </script>
     </li>
     <li>Concrete class
         <script type="text/plain" class="language-java">
             class Division implements Calculator {
                 @Override
-                public double calculate(double x, double y) {
+                public long calculate(long x, long y) {
                     return x / y;
                 }
             }
         </script>
         <script type="text/plain" class="language-java">
             Calculator division = new Division() ;
-            double quotient = division.calculate(10, 2);
+            long quotient = division.calculate(10, 2);
         </script>
     </li>
 </ul>
+<p>With Java 8, there is a third way to to implement an interface and that is by using <span
+        class="font-weight-bold">Lambda Expressions</span></p>
 <h3>Lambda Expressions</h3>
 <p>Lambda expressions encapsulate a single unit of behavior and pass it to other code. To be able to create lambda
     expression, you need first a Funtional Interface. This is the reason why a
@@ -118,6 +120,19 @@ keywords: java, java 8, lambda, functional, optional
             </script>
     </li>
 </ol>
+<p>Remember our <span class="inline-code">Calculator</span> interface? Here is how implement it using lambda expression:
+</p>
+<script type="text/plain" class="language-java">
+    Calculator multiplication = (a, b) -> a * b;    // or (a, b) -> Math.multiplyExact(a, b);
+    Calculator division = (a, b) -> a / b;
+    Calculator addition = (a, b) -> a + b;          // or (a, b) -> Math.addExact(a, b);
+    Calculator subtraction = (a, b) -> a - b;       // or (a, b) -> Math.subtractExact(a, b);
+
+    long product = multiplication.calculate(5, 5);
+    long quotient = division.calculate(10, 2);
+    long sum = addition.calculate(5, 5);
+    long difference = subtraction.calculate(10, 4);
+</script>
 <h3>Built-in Functions</h3>
 <p>Java 8 ships 43 built-in functions under <span class="inline-code">java.util.function</span> package. Thirty eight
     (38) of them are specialization for
@@ -130,7 +145,8 @@ keywords: java, java 8, lambda, functional, optional
     <li><span class="inline-code">Predicate</span></li>
 </ul>
 <h4>Function</h4>
-<p>Function represents a function that accepts one argument and produces a result.</p>
+<p>Function represents a function that accepts one argument and produces a result. The type parameter represents the
+    input to the function while the second one represents the type of result.</p>
 <ul>
     <li>Abstract method
         <script type="text/plain" class="language-java">
@@ -151,4 +167,15 @@ keywords: java, java 8, lambda, functional, optional
         </script>
     </li>
 </ul>
+<h4>Examples</h4>
+<p>Below is an example of Function that accepts a String argument and returns a String.</p>
+<script type="text/plain" class="language-java">
+    Function<String, String> f1 = a -> a;
+    String message = f1.apply("Welcome to Java 8!");
+</script>
+<p>This one accepts a String argument and returns an integer.</p>
+<script type="text/plain" class="language-java">
+    Function<String, Integer> f2 = a -> a.length();
+    int textLength = f2.apply("Welcome to Java 8!");
+</script>
 <p>To be continued...</p>
