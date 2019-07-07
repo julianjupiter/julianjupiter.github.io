@@ -145,29 +145,14 @@ keywords: java, java 8, lambda, functional, optional
     <li><span class="inline-code">Predicate</span></li>
 </ul>
 <h4>Function</h4>
-<p>Function represents a function that accepts one argument and produces a result. The type parameter represents the
-    input to the function while the second one represents the type of result.</p>
-<ul>
-    <li>Abstract method
-        <script type="text/plain" class="language-java">
-            apply(T t)
-        </script>
-    </li>
-    <li>Default methods
-        <script type="text/plain" class="language-java">
-            compose(Function <? super V,? extends T> before)
-        </script>
-        <script type="text/plain" class="language-java">
-            andThen(Function<? super R,? extends V> after)
-        </script>
-    </li>
-    <li>Static method
-        <script type="text/plain" class="language-java">
-            indentity()
-        </script>
-    </li>
-</ul>
-<h4>Examples</h4>
+<p>Function represents a function that accepts one argument and produces a result. The type parameter T represents
+    the type of the input to the function while the second one R represents the type of result. The functonal method of
+    this functional interface is <span class="inline-code">apply(Object)</span>.</p>
+<script type="text/plain" class="language-java">
+    @FunctionalInterface
+    public interface Function<T,R>
+</script>
+<h5>Examples</h5>
 <p>Below is an example of Function that accepts a String argument and returns a String.</p>
 <script type="text/plain" class="language-java">
     Function<String, String> f1 = a -> a;
@@ -177,5 +162,26 @@ keywords: java, java 8, lambda, functional, optional
 <script type="text/plain" class="language-java">
     Function<String, Integer> f2 = a -> a.length();
     int textLength = f2.apply("Welcome to Java 8!");
+</script>
+<h4>Consumer</h4>
+<p>Consumer represents an operation that accepts a single input argument and returns no result. The type parameter T
+    represents the type of the input to the operation. The functonal method of this functional interface is <span
+        class="inline-code">accept(Object)</span>.</p>
+<script type="text/plain" class="language-java">
+    @FunctionalInterface
+    public interface Consumer<T>
+</script>
+<h5>Examples</h5>
+<p>Both accept String input argument and returns no value.</p>
+<script type="text/plain" class="language-java">
+    Consumer<String> c1 = a -> System.out.println(a);
+    c1.accept("Welcome to Java 8!");
+    
+    Consumer<String> c2 = a -> {
+        String message = "Welcome to " + a + "!";
+        System.out.println(message);
+    };
+    
+    c2.accept("Java 8");
 </script>
 <p>To be continued...</p>
