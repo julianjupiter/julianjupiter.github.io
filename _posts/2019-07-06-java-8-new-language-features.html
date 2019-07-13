@@ -133,7 +133,7 @@ keywords: java, java 8, lambda, functional, optional
     long sum = addition.calculate(5, 5);
     long difference = subtraction.calculate(10, 4);
 </script>
-<h3>Built-in Functions</h3>
+<h3 id="built-in-functions">Built-in Functions</h3>
 <p>Java 8 ships 43 built-in functions under <span class="inline-code">java.util.function</span> package. Thirty eight
     (38) of them are specialization for
     primitive and other functions.</p>
@@ -211,17 +211,17 @@ keywords: java, java 8, lambda, functional, optional
 </script>
 <h5>Examples</h5>
 <p>To check if argument is equal to "YES" regardless of case:</p>
-<script type="text/plain" class="language=java">
+<script type="text/plain" class="language-java">
     Predicate<String> answerPredicate = a -> "YES".equalsIgnoreCase(a);
     boolean isYes = answerPredicate.test("Yes");
 </script>
-<p>TO check if person is of legal age (18 and above):</p>
-<script type="text/plain" class="language=java">
+<p>To check if person is of legal age (18 and above):</p>
+<script type="text/plain" class="language-java">
     public static Predicate<Integer> isLegalAge() {
         return age -> age >= 18;
     }
 </script>
-<script type="text/plain" class="language=java">
+<script type="text/plain" class="language-java">
     boolean legalAge = isLegalAge().test(18);
 </script>
 <h4>Other Built-in Functions</h4>
