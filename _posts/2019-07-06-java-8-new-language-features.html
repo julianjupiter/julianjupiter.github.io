@@ -262,4 +262,76 @@ keywords: java, java 8, lambda, functional, optional
 <script type="text/plain" class="language-java">
     Collections.sort(choices, (a, b) -> a.compareTo(b));
 </script>
+<h3>Default Methods</h3>
+<p>Default methods enable you to add new functionality to the interfaces of your libraries and ensure binary
+    compatibility with code written for older versions of those interfaces. They are interface methods that have an
+    implementation, similar to static methods, and the <span class="inline-code">default</span> keyword at the beginning
+    of the method signature.
+</p>
+<h4>Syntax</h4>
+<script type="text/plain" class="language-java">
+    default type methodName(type parameter) {
+		body
+	}
+</script>
+<p>For example, default method <span class="inline-code">forEach()</span> was added to <span
+        class="inline-code">Iterable</span> interface. This method takes a <span class="inline-code">Consumer</span>
+    argument
+    and performs action for each element (similar to enhanced <span class="inline-code">for-each</span> construct).
+    <span class="inline-code">List</span> interface which extends <span class="inline-code">Iterable</span>
+    can now be used with <span class="inline-code">forEach()</span> method:</p>
+<script type="text/plain" class="language-java">
+    List<String> days = Arrays.asList("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+    days.forEach(day -> System.out.println(day));    
+</script>
+<h4>Example</h4>
+<script type="text/plain" class="language-java">
+    public interface Calculator {
+        double calculate(double number);
+        
+        default double sqrt(double number) {
+            return Math.sqrt(number);
+        }
+    }
+</script>
+<script type="text/plain" class="language-java">
+    Calculator sc = x -> x * x;
+    double square = sc.calculate(10.0); // 100.0
+    double sqrt = sc.sqrt(square);      // 10.0
+</script>
+<h3>Method References</h3>
+<p>Java 8 enables you to pass references of methods or constructors via the :: keyword. Method references are compact,
+    easy-to-read lambda expressions for methods that already have a name. They are
+    Preferred over lambda expression if the expression does nothing but calls an existing method.</p>
+<h4>Syntax</h4>
+<script type="text/plain" class="language-java">
+    Reference::methodName
+</script>
+<h4>Types of Method References</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Reference to a static method</th>
+            <td>ContainingClass::staticMethodName</td>
+        </tr>
+        <tr>
+            <th scope="row">Reference to an instance method of a particular object</th>
+            <td>containingObject::instanceMethodName</td>
+        </tr>
+        <tr>
+            <th scope="row">Reference to an instance method of an arbitrary object of a particular type</th>
+            <td>ContainingType::methodName</td>
+        </tr>
+        <tr>
+            <th scope="row">Reference to a constructor</th>
+            <td>ClassName::new</td>
+        </tr>
+    </tbody>
+</table>
 <p>To be continued...</p>
