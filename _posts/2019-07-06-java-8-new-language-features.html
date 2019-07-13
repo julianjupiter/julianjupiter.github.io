@@ -224,10 +224,42 @@ keywords: java, java 8, lambda, functional, optional
 <script type="text/plain" class="language-java">
     boolean legalAge = isLegalAge().test(18);
 </script>
-<h4>Other Built-in Functions</h4>
+<h4>Built-in Functions - Specialization</h4>
 <p>Other built-in functions are specializations for primitive types and for basic or another specialization functions.
 </p>
 <p>To check all other built-in functions, please visit this <a
         href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html"
         target="blank">Javadoc</a>.</p>
+<h4>Existing Interface - Comparator</h4>
+<p><span class="inline-code">Comparator</span> is an existing interface in Java since version 1.2. This interface has a
+    single abstract method, <span class="inline-code">compare(T o1, T o2)</span>, and, therefore, can be used as lambda
+    expression similar to functions added to Java 8.</p>
+<p>Prior to Java 8, we would use <span class="inline-code">Comparator</span> in sorting a collection the following way:
+</p>
+<script type="text/plain" class="language-java">
+    List<String> choices = Arrays.asList("c", "a", "d", "b", "e");
+
+    Collections.sort(choices, new Comparator<String>() {
+        @Override
+        public int compare(String a, String b) {
+            return a.compareTo(b);
+        }
+    });
+</script>
+<p>With Java 8:</p>
+<script type="text/plain" class="language-java">
+    Comparator<String> comparator = (a, b) -> a.compareTo(b);
+    Collections.sort(choices, comparator);
+</script>
+<script type="text/plain" class="language-java">
+    Collections.sort(choices, (String a, String b) -> {
+        return a.compareTo(b);
+    });
+</script>
+<script type="text/plain" class="language-java">
+    Collections.sort(choices, (String a, String b) -> a.compareTo(b));
+</script>
+<script type="text/plain" class="language-java">
+    Collections.sort(choices, (a, b) -> a.compareTo(b));
+</script>
 <p>To be continued...</p>
