@@ -8,3 +8,72 @@ keywords: java, maven, gradle, wrapper
 
 <h3>Overview</h3>
 <p>This post walks you through how to create wrapper for Maven and Gradle build tools.</p>
+<p></p>
+<h3>Maven Wrapper</h3>
+<h4>Install Maven</h4>
+<p>If you have not installed Maven already, download it from <a href="http://maven.apache.org/download.cgi"
+        target="_blank">http://maven.apache.org/download.cgi</a>. You can choose either .zip or .tar.gz format. Once you
+    have downloaded it, extract the package in a directory you prefer. On Windows, I installed it in <span
+        class="inline-code">D:\opt</span>.</p>
+<p>Edit system environement variables and add MAVEN_HOME variable. In order use mvn command in any directory while using
+    CMD or Terminal, add also <span class="inline-code">%MAVEN_HOME&\bin</span> to <span class="inline-code">PATH</span>
+    variable.</p>
+<p><img class="img-fluid" src="/assets/images/how-to-create-maven-and-gradle-wrapper/1.JPG"
+        alt="Add MAVEN_HOME variable">
+</p>
+<p><img class="img-fluid" src="/assets/images/how-to-create-maven-and-gradle-wrapper/2.JPG"
+        alt="Add Maven to Path variable">
+</p>
+<p><img class="img-fluid" src="/assets/images/how-to-create-maven-and-gradle-wrapper/3.JPG"
+        alt="Add Maven to Path variable">
+</p>
+<p>You can verify your Maven installation by running <span class="inline-code">mvn -v</span> command on CMD.</p>
+<p><img class="img-fluid" src="/assets/images/how-to-create-maven-and-gradle-wrapper/4.JPG"
+        alt="Verify Maven installation">
+</p>
+<h4>Create Maven Wrapper</h4>
+<p>We are now going to generate wrapper. First go to your project root folder. Assuming your project is in
+    <span class="inline-code">D:\workspace\projects\my-app</span>:</p>
+<script type="text/plain" class="language-bash">
+    > D:
+    > cd workspace\projects\my-app
+    > mvn -N io.takari:maven:0.7.7:wrapper
+    D:\workspace\projects\my-app>mvn -N io.takari:maven:0.7.7:wrapper
+    [INFO] Scanning for projects...
+    [INFO]
+    [INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+    [INFO] Building Maven Stub Project (No POM) 1
+    [INFO] --------------------------------[ pom ]---------------------------------
+    [INFO]
+    [INFO] --- maven:0.7.7:wrapper (default-cli) @ standalone-pom ---
+    [INFO]
+    [INFO] Maven Wrapper version 0.5.6 has been successfully set up for your project.
+    [INFO] Using Apache Maven: 3.6.3
+    [INFO] Repo URL in properties file: https://repo.maven.apache.org/maven2
+    [INFO]
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time:  3.447 s
+    [INFO] Finished at: 2020-03-16T06:53:57+08:00
+    [INFO] ------------------------------------------------------------------------
+</script>
+<p>It should have generated a folder <span class="inline-code">.mvn</span> and commands <span
+        class="inline-code">mvnw</span> for UNIX/Linux and <span class="inline-code">mvnw.cmd</span> for Windows. To
+    check the
+    generated wrapper:</p>
+<script type="text/plain" class="language-bash">
+    > dir
+     Volume in drive D is DATA
+     Volume Serial Number is EC0A-13F8
+    
+     Directory of D:\workspace\projects\my-app
+    
+    16/03/2020  06:53 AM    <DIR>          .
+    16/03/2020  06:53 AM    <DIR>          ..
+    16/03/2020  06:53 AM    <DIR>          .mvn
+    16/03/2020  06:53 AM            10,069 mvnw
+    16/03/2020  06:53 AM             6,607 mvnw.cmd
+                    2 File(s)         16,676 bytes
+                    3 Dir(s)  899,194,486,784 bytes free
+</script>
