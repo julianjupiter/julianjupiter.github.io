@@ -17,8 +17,9 @@ keywords: java, maven, gradle, wrapper
         target="_blank">http://maven.apache.org/download.cgi</a>. You can choose either .zip or .tar.gz format. Once you
     have downloaded it, extract the package in a directory you prefer. On Windows, I installed it in <span
         class="inline-code">D:\opt</span>.</p>
-<p>Edit system environement variables and add MAVEN_HOME variable. In order use mvn command in any directory while using
-    CMD or Terminal, add also <span class="inline-code">%MAVEN_HOME&\bin</span> to <span class="inline-code">PATH</span>
+<p>Edit system environement variables and add MAVEN_HOME variable. In order use <span class="inline-code">mvn</span>
+    command in any directory while using
+    CMD or Terminal, add also <span class="inline-code">%MAVEN_HOME%\bin</span> to <span class="inline-code">PATH</span>
     variable.</p>
 <p><img class="img-fluid" src="/assets/images/how-to-create-maven-and-gradle-wrapper/1.JPG"
         alt="Add MAVEN_HOME variable">
@@ -82,12 +83,13 @@ keywords: java, maven, gradle, wrapper
 <h3>Gradle Wrapper</h3>
 <h4>Install Gradle</h4>
 <p>If you have not installed Gradle already, download it from <a href="https://gradle.org/releases/"
-        target="_blank">https://gradle.org/releases/</a>. You can <span class="inline-code">binary-only</span>. Once you
+        target="_blank">https://gradle.org/releases/</a>. Choose <span class="inline-code">binary-only</span>. Once you
     have downloaded it, extract the package in a directory you prefer. On Windows, I installed it in <span
         class="inline-code">D:\opt</span>.</p>
-<p>Edit system environement variables and add GRADLE_HOME variable. In order use mvn command in any directory while
+<p>Edit system environement variables and add GRADLE_HOME variable. In order use <span class="inline-code">gradle</span>
+    command in any directory while
     using
-    CMD or Terminal, add also <span class="inline-code">%GRADLE_HOME&\bin</span> to <span
+    CMD or Terminal, add also <span class="inline-code">%GRADLE_HOME%\bin</span> to <span
         class="inline-code">PATH</span>
     variable.</p>
 <p><img class="img-fluid" src="/assets/images/how-to-create-maven-and-gradle-wrapper/5.JPG"
@@ -99,7 +101,7 @@ keywords: java, maven, gradle, wrapper
 <p><img class="img-fluid" src="/assets/images/how-to-create-maven-and-gradle-wrapper/7.JPG"
         alt="Add Gradle to Path variable">
 </p>
-<p>You can verify your Maven installation by running <span class="inline-code">mvn -v</span> command on CMD.</p>
+<p>You can verify your Gradle installation by running <span class="inline-code">gradle -v</span> command on CMD.</p>
 <p><img class="img-fluid" src="/assets/images/how-to-create-maven-and-gradle-wrapper/8.JPG"
         alt="Verify Gradle installation">
 </p>
