@@ -334,4 +334,165 @@ keywords: java, java 8, lambda, functional, optional
         </tr>
     </tbody>
 </table>
+<h4>Example</h4>
+<h3>Reference to a static method</h3>
+<ol>
+    <li>Example 1<br>
+        <script type="text/plain" class="language-java">
+            class Person {
+                private LocalDate birthday;
+
+                public Person() {}
+
+                public Person(LocalDate birthday) {
+                    this.birthday = birthday;
+                }
+
+                // setters, getters
+
+                public static int compareByAge(Person a, Person b) {
+                    return a.birthday.compareTo(b.birthday);
+                }
+            }
+        </script>
+        <script type="text/plain" class="language-java">
+            Person p1 = new Person(LocalDate.of(2000, 6, 21));
+            Person p2 = new Person(LocalDate.of(2000, 6, 15));
+            Person p3 = new Person(LocalDate.of(1998, 3, 28));
+            Person[] persons = {p1, p2, p3};
+        </script>
+        <p>Lambda Expression</p>
+        <script type="text/plain" class="language-java">
+            Arrays.sort(persons, (p1, p2) -> Person.compareByAge(p1, p2));
+        </script>
+        <p>Method Reference</p>
+        <script type="text/plain" class="language-java">
+            Arrays.sort(persons, Person::compareByAge);
+        </script>
+    </li>
+    <li>Example 2<br>
+        <script type="text/plain" class="language-java">
+            @FunctionalInterface
+            public interface StringToIntConverter {
+                int convert(String string);
+            }
+        </script>
+        <p>Lambda Expression</p>
+        <script type="text/plain" class="language-java">
+            StringToIntConverter converter = s -> Integer.valueOf(s);
+            int i = converter.convert("10");
+        </script>
+        <p>Method Reference</p>
+        <script type="text/plain" class="language-java">
+            StringToIntConverter converter = Integer::valueOf;
+            int i = converter.convert("10");
+        </script>
+    </li>
+</ol>
+<h3>Reference to an instance method of a particular object</h3>
+<ol>
+    <li>Example 1<br>
+        <script type="text/plain" class="language-java">
+            public class Something {
+                public int getYear(LocalDate localDate) {
+                    return localDate.getYear();
+                }
+            }
+        </script>
+        <p>Lambda Expression</p>
+        <script type="text/plain" class="language-java">
+            Something something = new Something();
+            Function<LocalDate, Integer> f = d -> something.getYear(d);
+            int year = f.apply(p1.getBirthday());
+        </script>
+        <p>Method Reference</p>
+        <script type="text/plain" class="language-java">
+            Something something = new Something();
+            Function<LocalDate, Integer> f = something::getYear;
+            int year = f.apply(p1.getBirthday());
+        </script>
+    </li>
+    <li>Example 2<br>
+        <script type="text/plain" class="language-java">
+            public interface PersonDao {
+                Person findById(int id);
+            }
+        </script>
+        <p>Lambda Expression</p>
+        <script type="text/plain" class="language-java">
+            PersonDao personDao = new PersonDaoImpl();
+            Function<Integer, Person> f = id -> personDao.findById(id);
+            Person person = f.apply(1);
+        </script>
+        <p>Method Reference</p>
+        <script type="text/plain" class="language-java">
+            PersonDao personDao = new PersonDaoImpl(); 
+            Function<Integer, Person > f = personDao::findById;
+            Person person = f.apply(1);
+        </script>
+    </li>
+</ol>
+<h3>Reference to an instance method of an arbitrary object of a particular type</h3>
+<ol>
+    <li>Example 1<br>
+        <p>Lambda Expression</p>
+        <script type="text/plain" class="language-java">
+            Function<String, String> f = s -> s.toUpperCase();
+            String httpGet = f.apply("get");
+        </script>
+        <p>Method Reference</p>
+        <script type="text/plain" class="language-java">
+            Function<String, String> f = String::toUpperCase;
+            String httpGet = f.apply("get");
+        </script>
+    </li>
+    <li>Example 2<br>
+        <p>Lambda Expression</p>
+        <script type="text/plain" class="language-java">
+            Person person = ...
+            Function<Person, LocalDate> f = p -> p.getBirthday();
+            LocalDate birthday = f.apply(person);
+        </script>
+        <p>Method Reference</p>
+        <script type="text/plain" class="language-java">
+            Person person = ...
+            Function<Person, LocalDate> f = Person::getBirthday;
+            LocalDate birthday = f.apply(person);
+        </script>
+    </li>
+</ol>
+<h3>Reference to a constructor</h3>
+<ol>
+    <li>Example 1<br>
+        <p>Lambda Expression</p>
+        <script type="text/plain" class="language-java">
+            Function<LocalDate, Person> f = d -> new Person(d);
+            LocalDate birthday = LocalDate.of(2000, 10, 12);
+            Person person = f.apply(birthday);
+        </script>
+        <p>Method Reference</p>
+        <script type="text/plain" class="language-java">
+            Function<LocalDate, Person> f = Person::new;
+            LocalDate birthday = LocalDate.of(2000, 10, 12);
+            Person person = f.apply(birthday);
+        </script>
+    </li>
+    <li>Example 2<br>
+        <script type="text/plain" class="language-java">
+            public interface PersonDao {
+                Person findById(int id);
+            }
+        </script>
+        <p>Lambda Expression</p>
+        <script type="text/plain" class="language-java">
+            Supplier<Person> s = () -> new Person();
+            Person person = s.get();
+        </script>
+        <p>Method Reference</p>
+        <script type="text/plain" class="language-java">
+            Supplier<Person> s = Person::new;
+            Person person = s.get();
+        </script>
+    </li>
+</ol>
 <p>To be continued...</p>
