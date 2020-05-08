@@ -1,1 +1,0 @@
-$('span#currentYear').text((new Date()).getFullYear());

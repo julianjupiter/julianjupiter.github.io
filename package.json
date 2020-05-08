@@ -1,0 +1,26 @@
+{
+  "name": "julianjupiter.github.io",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "next build && next export -o docs && git checkout -- docs/CNAME && git checkout -- docs/.nojekyll && git add docs && git commit -m \"chore: regen site\" && git push origin master"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "bootstrap": "^4.4.1",
+    "gray-matter": "^4.0.2",
+    "next": "9.3.4",
+    "raw-loader": "^4.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-markdown": "^4.3.1",
+    "sass": "^1.26.5"
+  }
+}
