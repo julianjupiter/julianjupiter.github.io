@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include post_head.html %}
+    <body>
+        {% include header.html %}
+        <section class="jumbotron text-center rounded-0 mb-0">
+            <div class="container">
+                <h1>{{ page.title }}</h1>
+                <p class="lead text-muted">{{ page.description }}</p>
+                <p class="lead text-muted">
+                    <info datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</info> &#124;
+                    <a href="{{ page.url | prepend: site.url }}index.html#disqus_thread" data-disqus-identifier="{{ page.url }}"></a>
+                </p>
+            </div>
+        </section>
+        <main role="main">
+            <section class="py-5 bg-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            {{ content }}
+                        </div>
+                    </div>
+                    <!-- Begin : Disqus Comments -->
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <hr style="border: 1px solid #e7e9ee;">
+                            {% include disqus.html %}
+                        </div>
+                    </div>            
+                    <!-- End : Disqus Comments -->
+                </div>
+            </section>
+        </main>
+        {% include footer.html %}
+        {% include js.html %}
+    </body>
+</html>
