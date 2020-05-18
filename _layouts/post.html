@@ -9,7 +9,7 @@
                 <p class="lead text-muted">{{ page.description }}</p>
                 <p class="lead text-muted">
                     <info datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</info> &#124;
-                    <a href="{{ page.url | prepend: site.url }}index.html#disqus_thread" data-disqus-identifier="{{ page.url }}"></a>
+                    <a href="{{ page.url | prepend: site.url }}#disqus_thread" data-disqus-identifier="{{ page.url }}"></a>
                 </p>
             </div>
         </section>
