@@ -299,7 +299,7 @@ Collections.sort(choices, (a, b) -> a.compareTo(b));
 
 Default methods enable you to add new functionality to the interfaces of your libraries and ensure binary compatibility with code written for older versions of those interfaces. They are interface methods that have an implementation, similar to static methods, and the `default` keyword at the beginning of the method signature.
 
-#### Syntax</h4>
+#### Syntax
 
 ```java
 default type methodName(type parameter) {
