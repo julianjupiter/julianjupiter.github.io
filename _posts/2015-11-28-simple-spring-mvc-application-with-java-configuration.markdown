@@ -6,8 +6,9 @@ description: Simple Spring MVC application with Java configuration instead of XM
 categories:
 keywords: Java, Spring, Spring MVC, XML configuration, Java configuration, Java annotation
 image:
-  cover: 
-  og: 
+  cover: /assets/images/blog/simple-spring-mvc-application-with-java-configuration/cover.PNG
+  og: /assets/images/blog/simple-spring-mvc-application-with-java-configuration/cover.PNG
+  thumbnail: /assets/images/blog/simple-spring-mvc-application-with-java-configuration/thumbnail.png
 ---
 
 ## Introduction

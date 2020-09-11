@@ -8,6 +8,7 @@ keywords: Java, Java web, Apache Tomcat, Tomcat embed, Tomcat embedded
 image:
   cover: /assets/images/blog/java-web-application-with-embedded-tomcat/cover.PNG
   og: /assets/images/blog/java-web-application-with-embedded-tomcat/cover.PNG
+  thumbnail: /assets/images/blog/java-web-application-with-embedded-tomcat/thumbnail.png
 ---
 
 ### Purpose

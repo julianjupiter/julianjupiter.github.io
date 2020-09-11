@@ -8,6 +8,7 @@ keywords: PHP installation, PHP installation on Windows
 image:
   cover: /assets/images/blog/installation-of-php-7-on-windows-10/cover.PNG
   og: /assets/images/blog/installation-of-php-7-on-windows-10/cover.PNG
+  thumbnail: /assets/images/blog/installation-of-php-7-on-windows-10/thumbnail.png
 ---
 
 This is a step-by-step setup of PHP 7 on Windows 10.

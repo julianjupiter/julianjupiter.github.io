@@ -8,6 +8,7 @@ keywords: Java, Java 8, Java 8 new features
 image:
   cover: 
   og: 
+  thumbnail: /assets/images/blog/java-8-new-language-features/thumbnail.png
 ---
 
 ### Overview

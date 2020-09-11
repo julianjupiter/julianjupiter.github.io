@@ -8,6 +8,7 @@ keywords: Maven, Gradle, Maven wrapper, Gradle wrapper
 image:
   cover: /assets/images/blog/how-to-create-maven-and-gradle-wrapper/cover.JPG
   og:
+  thumbnail: /assets/images/blog/how-to-create-maven-and-gradle-wrapper/thumbnail.png
 ---
 
 ### Overview

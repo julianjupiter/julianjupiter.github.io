@@ -21,7 +21,7 @@ keywords: Blog, GitHub, Programming, Java, Linux, Web
             {% for post in site.posts limit:6 %}
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                    <img src="{{ site.url }}/assets/images{{ post.url }}/thumbnail.png">
+                    <img src="{{ post.image.thumbnail | prepend: site.url }}">
                     <div class="card-body" style="min-height: 250px;">
                         <h5 class="card-title"><a href="{{ post.url | prepend: site.url }}" title="{{ post.description }}">{{ post.title }}</a></h5>
                         <p>
