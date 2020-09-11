@@ -16,7 +16,7 @@ keywords: Blog, GitHub, Programming, Java, Linux, Web
             {% for post in site.posts %}
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                    <img src="{{ site.url }}/assets/images{{ post.url }}/thumbnail.png">
                     <div class="card-body" style="min-height: 250px;">
                         <h5 class="card-title"><a href="{{ post.url | prepend: site.url }}" title="{{ post.description }}">{{ post.title }}</a></h5>
                         <p>
