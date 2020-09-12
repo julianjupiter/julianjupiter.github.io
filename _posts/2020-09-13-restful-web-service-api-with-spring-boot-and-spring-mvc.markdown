@@ -58,11 +58,11 @@ We will implement at least four (4) operations on this web service:
     </tbody>
 </table>
 
-## Request and Response
+### Request and Response
 
 The context path of the service is `/storee/api/v1` and runs on port `7000`, hence `http://localhost:7000/storee/api/v1`;
 
-### Retrieve all products
+#### Retrieve all products
 
 **Request**
 
@@ -90,7 +90,7 @@ Body:
 ] 
 ```
 
-### Create a product
+#### Create a product
 
 **Request**
 
@@ -126,7 +126,7 @@ Body:
 }
 ```
 
-### Retrieve a product by ID
+#### Retrieve a product by ID
 
 **Request**
 
@@ -151,7 +151,7 @@ Body:
 }
 ```
 
-### Update a product by ID
+#### Update a product by ID
 
 **Request**
 
@@ -187,7 +187,7 @@ Body:
 }
 ```
 
-### Delete a product by ID
+#### Delete a product by ID
 
 **Request**
 
@@ -199,7 +199,7 @@ Endpoint: `http://localhost:7000/storee/api/v1/products/{id}`
 
 Status: `204 No Content`
 
-### Note:
+#### Note:
 
 Retrieving all products will always return `200 OK` HTTP status whether there is data or none (`[]`).
 
@@ -349,7 +349,7 @@ NotNull.productDto.price = Product price is required.
 NotNull.productDto.quantity = Product quantity is required.
 ```
 
-### Let's code
+### Let's Code
 
 The most important part of the code in this project is the `controller` since this is the layer, web layer, that contains the API that exposes our RESTful web services. However, our controller depends on other layer to fulfill its function. For this reason, we will start coding from codes that have no or have minimal dependencies.
 
@@ -1066,11 +1066,11 @@ public enum MessageSourceProperties {
 }
 ```
 
-#### Final Project Structure
+## Final Project Structure
 
 <img class="img-fluid" src="/assets/images/blog/restful-web-service-api-with-spring-boot-and-spring-mvc/03.JPG" alt="Final Project Structure">
 
-### Build and Run the Service
+## Build and Run the Service
 
 `Spring Boot` project comes with Maven wrapper. If first time to run it, it will download Maven binary package and the dependencies.
 
@@ -1098,7 +1098,7 @@ On Windows:
 > java -jar .\target/storee-product-service-0.0.1-SNAPSHOT.jar
 ```
 
-### Testing Time
+## Testing Time
 
 To test, I'm going to use [Insomnia Core](https://insomnia.rest/). You could laso use [Postman](https://www.postman.com/), `curl` or [HTTPie](https://httpie.org/).
 
@@ -1653,11 +1653,11 @@ Body:
 
 <img class="img-fluid" src="/assets/images/blog/restful-web-service-api-with-spring-boot-and-spring-mvc/19.JPG" alt="Retrieve products">
 
-### Conclusion
+## Conclusion
 
 We're able to develop RESTful web service using `Spring Boot` and `Spring MVC`. We applied some proper conventions in building RESTful web service such as RESTful URI and appropriate HTTP verbs.
 
-### Clone the source
+## Clone the Source
 
 [GitHub Source](https://github.com/julianjupiter/storee)
 
