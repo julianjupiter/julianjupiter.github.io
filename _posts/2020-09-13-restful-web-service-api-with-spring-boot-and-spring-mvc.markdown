@@ -19,7 +19,7 @@ This post walks you through the process of creating RESTful web service API with
 
 The service that we are going to create is for the `Product` in an e-commerce application which I call `Storee`.
 
-We will implement at least four (4) operations on this web service:
+We will implement at least five (5) operations on this web service:
 
 <table class="table">
     <thead>
