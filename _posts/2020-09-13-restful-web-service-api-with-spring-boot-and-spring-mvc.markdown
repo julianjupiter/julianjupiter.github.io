@@ -317,7 +317,7 @@ Project structure should be as follows:
 
 ### Configuration
 
-Let's rename `application.properties` inside `src/main/resources` folder to `application.yml`. Copy and paste the following it:
+Let's rename `application.properties` inside `src/main/resources` folder to `application.yml`. Copy and paste the following text:
 
 ```yml
 # server
@@ -340,7 +340,7 @@ spring:
     basename: i18n/messages
 ```
 
-Since `messages.basename` value is `i18n/messages`, let's also create folder `i18n` folder inside `src/main/resources` and a file `messages.properties`. This file will contain the messages needed in our error response. Copy and paste the following to `messages.properties`.
+Since `messages.basename` value is `i18n/messages`, let's also create folder `i18n` folder inside `src/main/resources` and a file `messages.properties` inside it. This file will contain the messages needed in our error response. Copy and paste the following text to `messages.properties`.
 
 ```properties
 product.not.found = Product with ID {0} was not found.
@@ -454,7 +454,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
 #### DTO
 
-We could have used the entity class, `Product.java`, for the request and response payload but It would still be better that our entity not to be exposed in our web service. So, I've decided to still use `Data Transfer Object`. Don't be surprised if the DTO has the same structure as the entity. The only difference are the Bean Validation annotations and, of course, the name.
+We could have used the entity class, `Product.java`, for the request and response payload but it would still be better that our entity not to be exposed in our web service. So, I've decided to use `Data Transfer Object`. Don't be surprised if the DTO has the same structure as the entity. The only differences are the Bean Validation annotations and, of course, the class name.
 
 `ProductDto.java`
 
@@ -674,7 +674,7 @@ public class ProductServiceImpl implements ProductService {
 
 #### Controller
 
-And here we have our controller, `ProductController`. In this class will we define the endpoints and HTTP method need for our web services.
+And here we have our controller, `ProductController`. In this class we will define the endpoints and HTTP methods needed for our web services.
 
 `ProductController.java`
 
@@ -774,7 +774,7 @@ public List<ProductDto> findAll() {
 }
 ```
 
-Notice that we do not define the path here. This is because, on class level, we already did so, `@RequestMapping("/products")`. This is the root of all product services.
+Notice that we do not define the path here. This is because, on class level, we already did so, `@RequestMapping("/products")`. This is the root URI of all product services.
 
 The same also for creating a product resource:
 
@@ -1100,7 +1100,7 @@ On Windows:
 
 ## Testing Time
 
-To test, I'm going to use [Insomnia Core](https://insomnia.rest/). You could laso use [Postman](https://www.postman.com/), `curl` or [HTTPie](https://httpie.org/).
+To test, I'm going to use [Insomnia Core](https://insomnia.rest/). You could also use [Postman](https://www.postman.com/), `curl` or [HTTPie](https://httpie.org/).
 
 **Retrieve products, no data**
 
@@ -1513,7 +1513,7 @@ Body:
 
 <img class="img-fluid" src="/assets/images/blog/restful-web-service-api-with-spring-boot-and-spring-mvc/14.JPG" alt="Retrieve updated product">
 
-**Retrieve product**
+**Retrieve products**
 
 Request:
 
@@ -1624,7 +1624,7 @@ Body:
 
 <img class="img-fluid" src="/assets/images/blog/restful-web-service-api-with-spring-boot-and-spring-mvc/18.JPG" alt="Retrieve deleted product, not found">
 
-**Retrieve product**
+**Retrieve products**
 
 Request:
 
