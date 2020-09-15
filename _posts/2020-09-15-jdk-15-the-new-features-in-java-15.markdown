@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JDK 15: The New Features in Java 15
+title: JDK 15&colon; The New Features in Java 15
 date: 2020-09-13
 description: New features in Java 15 which has become GA on September 15, 2020.
 categories:
@@ -33,5 +33,5 @@ The release includes fourteen features:
 [Java 15 / JDK 15: General Availability](https://mail.openjdk.java.net/pipermail/announce/2020-September/000291.html)
 
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" title="JDK 15: The New Features in Java 15" src="https://www.youtube.com/watch?v=QLjwyi14a88" frameborder="0" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" title="JDK 15: The New Features in Java 15" src="https://www.youtube.com/embed/QLjwyi14a88" frameborder="0" allowfullscreen></iframe>
 </div>
