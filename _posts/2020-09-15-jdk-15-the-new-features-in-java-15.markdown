@@ -1,8 +1,8 @@
 ---
 layout: post
 title: JDK 15&colon; The New Features in Java 15
-date: 2020-09-13
-description: New features in Java 15 which has become GA on September 15, 2020.
+date: 2020-09-15
+description: New features in Java 15 which has become GA today, September 15, 2020.
 categories:
 keywords: Java, JDK, OpenJDK, Java 15, JDK 15, OpenJDK 15
 image:
