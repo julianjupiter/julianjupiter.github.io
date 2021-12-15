@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: julianjupiter.com
+Token: 7e6669bc240e9d9cfb8111d4bac67ccfc9727720d2627ff089447db937e3e94f
