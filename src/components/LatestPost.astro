@@ -2,7 +2,7 @@
 const { post } = Astro.props;
 const postData = post.data;
 const url = Astro.site;
-const disqusIdentifier = `blog/${post.slug}`;
+const disqusIdentifier = `/blog/${post.slug}`;
 const path = `${url}blog/${post.slug}`;
 const date = postData.date;
 const year = new Intl.DateTimeFormat("en", { year: "numeric" }).format(date);

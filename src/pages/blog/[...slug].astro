@@ -17,7 +17,9 @@ const { post } = Astro.props;
 const postData = post.data;
 const postTitle = postData.title;
 const title = SITE_TITLE + " - Blog - " + postTitle;
-const path = `/blog/${post.slug}`;
+const url = Astro.site;
+const disqusIdentifier = `/blog/${post.slug}`;
+const path = `${url}blog/${post.slug}`;
 const { Content } = await post.render();
 
 const date = postData.date;
@@ -27,7 +29,7 @@ const day = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(date);
 const formattedDate = `${month} ${day}, ${year}`;
 ---
 
-<BlogLayout title={title} description={postData.description} keywords={postData.keywords} author={postData.author} image={postData.image.thumbnail} path={path}>
+<BlogLayout title={title} description={postData.description} keywords={postData.keywords} author={postData.author} image={postData.image.thumbnail} disqusIdentifier={disqusIdentifier}>
   <section class="py-5 text-center">
     <figure
       class="max-w-6xl mx-5 lg:mx-auto md:mx-5 sm:mx-5 rounded-xl border-2 border-gray-900 grid place-content-center min-h-80 bg-[url('/assets/images/bg-cover-blog-post.svg')] bg-no-repeat bg-cover bg-right"
@@ -39,7 +41,7 @@ const formattedDate = `${month} ${day}, ${year}`;
         <p>
           {formattedDate} | <a
             href={`${path}#disqus_thread`}
-            data-disqus-identifier={path}>4</a>
+            data-disqus-identifier={disqusIdentifier}>4</a>
         </p>
       </div>
     </figure>

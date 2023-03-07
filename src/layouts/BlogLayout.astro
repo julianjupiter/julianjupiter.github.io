@@ -12,10 +12,10 @@ export interface Props {
   keywords: string;
   author: string;
   image: string;
-  path: string;
+  disqusIdentifier: string;
 }
 
-const { title, description, keywords, author, image, path } = Astro.props;
+const { title, description, keywords, author, image, disqusIdentifier } = Astro.props;
 const page = "blog";
 ---
 
@@ -40,7 +40,7 @@ const page = "blog";
         </script>
       </section>
       <section class="max-w-6xl mx-5 lg:mx-auto md:mx-5 sm:mx-5 py-5 text-justify">
-        <Disqus path={path} />
+        <Disqus disqusIdentifier={disqusIdentifier} />
       </section>
     </main>
     <Footer />
