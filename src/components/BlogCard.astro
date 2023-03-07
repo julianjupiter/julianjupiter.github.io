@@ -30,7 +30,7 @@ const formattedDate = `${month} ${day}, ${year}`;
       class="card-title text-2xl text-gray-400 hover:text-orange-600 font-family-dm-serif-display"
       >{postData.title}</a
     >
-    <p class="my-3">{formattedDate}</p>
+    <p class="my-3"><small>Published in {formattedDate} by <span class="text-orange-500">{postData.author}</span></small></p>
     <p class="card-text text-gray-200">
       {postData.description}
     </p>
