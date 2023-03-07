@@ -10,14 +10,20 @@ import Button from "./Button.astro";
 >
   Want to work together or have any questions?
 </p>
-<div id="messageSuccess"
+<div
+  id="messageSuccess"
   class="mb-4 rounded-lg bg-green-500 py-5 px-6 text-base text-green-900 border border-green-700"
-  role="alert" style="display:none;">
+  role="alert"
+  style="display:none;"
+>
   Your message has been sent!
 </div>
-<div id="messageError"
+<div
+  id="messageError"
   class="mb-4 rounded-lg bg-red-500 py-5 px-6 text-base text-red-900 border border-red-700"
-  role="alert" style="display:none;">
+  role="alert"
+  style="display:none;"
+>
   Please complete the form!
 </div>
 <form
@@ -48,13 +54,15 @@ import Button from "./Button.astro";
     name="entry.274042200"
     class="block w-full bg-transparent rounded-0 border border-gray-300 focus:outline-none py-1 px-1.5 text-gray-100 mb-5"
     rows="5"></textarea>
-  <Button
-    type="submit"
-    label="Say hello"
-    color="orange"
-    size="lg"
-    width="w-48"
-  />
+  <div class="text-center">
+    <Button
+      type="submit"
+      label="Say hello"
+      color="orange"
+      size="lg"
+      width="w-48"
+    />
+  </div>
 </form>
 <iframe id="gform-hidden-iframe" name="hidden_iframe" style="display:none;"
 ></iframe>
@@ -78,7 +86,7 @@ import Button from "./Button.astro";
       return false;
     }
   });
-  
+
   iframe.onload = () => {
     gform.reset();
     toggleAlert("block", "none");
