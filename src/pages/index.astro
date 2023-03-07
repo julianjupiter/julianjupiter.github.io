@@ -1,0 +1,90 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import {
+  SITE_TITLE,
+  SITE_KEYWORDS,
+  SITE_AUTHOR,
+  GREETINGS,
+  STATEMENT,
+} from "../consts";
+import Button from "../components/Button.astro";
+import { getCollection } from "astro:content";
+import LatestPost from "../components/LatestPost.astro";
+import ContactForm from "../components/ContactForm.astro";
+
+const page = "home";
+const title = SITE_TITLE + " - Home";
+const description = GREETINGS + " " + STATEMENT;
+const keywords = `${SITE_TITLE}, ${page}, ${SITE_KEYWORDS}`;
+const author = SITE_AUTHOR;
+
+const blogs = (await getCollection("blog")).sort(
+  (a, b) => b.data.date - a.data.date
+);
+---
+
+<DefaultLayout
+  page={page}
+  title={title}
+  description={description}
+  keywords={keywords}
+  author={author}
+>
+  <section
+    id="hero"
+    class="max-w-6xl mx-5 lg:mx-auto md:mx-5 sm:mx-5 py-5 text-center grid place-content-center"
+    style="height:calc(100vh - 224px);"
+  >
+    <h1
+      class="font-family-dm-serif-display text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-300 text-4xl sm:text-6xl mb-5"
+    >
+      {GREETINGS}
+    </h1>
+    <p
+      class="font-family-ubuntu text-gray-400 text-center text-2xl sm:text-4xl mb-5 max-w-4xl"
+    >
+      "{STATEMENT}"
+    </p>
+    <a href="/profile">
+      <Button
+        type="submit"
+        label="It's me!"
+        color="orange"
+        size="lg"
+        width="w-48"
+      />
+    </a>
+  </section>
+  <section
+    id="latest-blogs"
+    class="max-w-6xl mx-5 lg:mx-auto md:mx-5 sm:mx-5 py-5"
+    style="min-height: 100vh;"
+  >
+    <h1 class="font-bold text-gray-400 text-center text-3xl pb-12">
+      Latest Blogs
+    </h1>
+    {blogs.slice(0, 6).map((post) => <LatestPost post={post} />)}
+    <div class="flex flex-wrap mb-6">
+      <div
+        class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3 mb-6 md:mb-0 mx-auto text-center"
+      >
+        <a href="/blog">
+          <Button
+            type="submit"
+            label="More posts..."
+            color="orange"
+            size="lg"
+            width="w-48"
+          />
+        </a>
+      </div>
+    </div>
+  </section>
+  <section
+    id="contact"
+    class="bg-gradient-to-r from-red-500 to-orange-400 grid place-content-center px-5 py-20"
+    style=""
+  >
+    <ContactForm />
+  </section>
+</DefaultLayout>

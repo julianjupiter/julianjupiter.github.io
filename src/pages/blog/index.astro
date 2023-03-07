@@ -1,0 +1,40 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import { getCollection } from "astro:content";
+import BlogCard from "../../components/BlogCard.astro";
+import { SITE_AUTHOR, SITE_KEYWORDS, SITE_TITLE } from "../../consts";
+
+const page = "blog";
+const title = SITE_TITLE + " - Blog";
+const description = "Julian Jupiter's blog page for backend and frontend development using technologies such as Java, Linux, SQL, JavaScript and a lot more."
+const keywords = `${SITE_TITLE}, ${page}, ${SITE_KEYWORDS}`;
+const author = SITE_AUTHOR;
+
+const posts = (await getCollection("blog"))
+    .sort((a, b) => b.data.date - a.data.date);
+---
+
+<DefaultLayout page={page} title={title} description={description} keywords={keywords} author={author}>
+  <section class="py-5 text-center" style="">
+    <figure
+      class="max-w-6xl mx-5 lg:mx-auto md:mx-5 sm:mx-5 py-5 rounded-xl border-2 border-gray-900 grid place-content-center h-80 bg-[url('/assets/images/bg-cover-blog.png')] bg-no-repeat bg-cover bg-right"
+      style="background-color:#343a40;"
+    >
+      <span class="text-orange-500 text-5xl">Blog</span>
+    </figure>
+  </section>
+  <section
+    class="max-w-6xl mx-5 lg:mx-auto md:mx-5 sm:mx-5 py-5 text-center"
+    style="min-height: 100vh;"
+  >
+    <ul class="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 gap-8 mb-5 pl-0">
+      {
+        posts.map((post) => (
+          <li>
+            <BlogCard post={post} />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</DefaultLayout>

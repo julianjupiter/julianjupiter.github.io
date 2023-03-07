@@ -1,0 +1,18 @@
+---
+const path = Astro.request.url;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="">
+  <div class="text-center px-4 py-8 bg-gray-800">
+    <ul class="flex justify-center mb-5 pl-0">
+      <li class="mx-2 hover:text-orange-500"><a href="/">Home</a></li>
+      <!-- <li class="mx-2 hover:text-orange-500"><a href="/profile">Profile</a></li> -->
+      <li class="mx-2 hover:text-orange-500"><a href="/blog">Blog</a></li>
+      <li class="mx-2 hover:text-orange-500"><a href="/#contact">Contact</a></li>
+    </ul>
+    <p>Copyright &copy; {currentYear} Julian Jupiter</p>
+    <p>All Rights Reserved.</p>
+    <p><a href={path + "#"}>Back to top</a></p>
+  </div>
+</footer>

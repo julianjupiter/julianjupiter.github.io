@@ -1,0 +1,16 @@
+---
+const { type, label, color, size, width } = Astro.props;
+
+const w = width && " " + width || "";
+
+const sizes = {
+    sm: " px-5 py-1 text-sm", 
+    md: " px-5 py-2 text-md", 
+    lg: " px-5 py-3 text-lg"
+};
+
+const s = (size && size in sizes && sizes[size]) || sizes["md"];
+---
+
+{color === "orange" && <button type={type} class={"bg-orange-600 hover:bg-white border-white hover:border-orange-600 hover:text-orange-600 rounded-full border px-5 py-2" + w + s}>{label}</button>}
+{color === "dark" && <button type={type} class="rounded-full border">{label}</button>}

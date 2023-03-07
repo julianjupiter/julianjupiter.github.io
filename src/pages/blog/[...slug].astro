@@ -1,0 +1,54 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import { SITE_TITLE } from "../../consts";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+type Props = CollectionEntry<'blog'>;
+
+const { post } = Astro.props;
+const postData = post.data;
+const postTitle = postData.title;
+const title = SITE_TITLE + " - Blog - " + postTitle;
+const path = `/blog/${post.slug}`;
+const { Content } = await post.render();
+
+const date = postData.date;
+const year = new Intl.DateTimeFormat("en", { year: "numeric" }).format(date);
+const month = new Intl.DateTimeFormat("en", { month: "long" }).format(date);
+const day = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(date);
+const formattedDate = `${month} ${day}, ${year}`;
+---
+
+<BlogLayout title={title} description={postData.description} keywords={postData.keywords} author={postData.author} image={postData.image.thumbnail} path={path}>
+  <section class="py-5 text-center">
+    <figure
+      class="max-w-6xl mx-5 lg:mx-auto md:mx-5 sm:mx-5 rounded-xl border-2 border-gray-900 grid place-content-center min-h-80 bg-[url('/assets/images/bg-cover-blog-post.svg')] bg-no-repeat bg-cover bg-right"
+      style="background-color:#343a40;"
+    >
+      <div class="px-5 py-12">
+        <h1 class="text-gray-300 text-4xl">{postTitle}</h1>
+        <p>{post.data.description}</p>
+        <p>
+          {formattedDate} | <a
+            href={`${path}#disqus_thread`}
+            data-disqus-identifier={path}>4</a>
+        </p>
+      </div>
+    </figure>
+  </section>
+  <section
+    id="post"
+    class="max-w-6xl mx-5 lg:mx-auto md:mx-5 sm:mx-5 py-5 text-justify"
+    style="min-height: 100vh;"
+  >
+    <Content />
+  </section>
+</BlogLayout>

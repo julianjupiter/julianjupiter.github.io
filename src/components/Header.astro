@@ -1,0 +1,45 @@
+---
+const { page } = Astro.props;
+
+const profilePhoto = "/assets/images/profile.jpg";
+const home = page === "home" ? "border-white" : "border-transparent";
+const profile = page === "profile" ? "border-white" : "border-transparent";
+const blog = page === "blog" ? "border-white" : "border-transparent";
+---
+
+<header id="header" class="bg-gray-900">
+  <div class="py-8">
+    <a href="/">
+      <img
+        class="w-12 h-12 rounded-full mx-auto border-2 border-gray-300"
+        src={profilePhoto}
+        alt="Julian Jupiter Profile Photo"
+      />
+      <div class="grid ml-2 justify-center">
+        <span class="font-bold hover:text-orange-500">Julian Jupiter</span>
+        <div class="flex justify-center text-gray-500">
+          <span class="text-blue-400 material-symbols-outlined mr-1"> verified</span>
+          <span>Official</span>
+        </div>
+      </div>
+    </a>
+    <nav class="flex justify-center mt-5">
+      <a href="/" class={home + " border-b-4 hover:border-gray-500 py-2"}
+        >Home</a
+      >
+      <!-- <a
+        href="/profile"
+        class={profile + " border-b-4 hover:border-gray-500 py-2 ml-8"}
+        >Profile</a
+      > -->
+      <a
+        href="/blog"
+        class={blog + " border-b-4 hover:border-gray-500 py-2 ml-8"}>Blog</a
+      >
+      <a
+        href="/#contact"
+        class="border-transparent border-b-4 hover:border-gray-500 py-2 ml-8">Contact</a
+      >
+    </nav>
+  </div>
+</header>

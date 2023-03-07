@@ -1,0 +1,54 @@
+---
+import { SITE_AUTHOR, SITE_TITLE, SITE_KEYWORDS } from "../consts";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+
+const page = "profile";
+const title = SITE_TITLE + " - Profile";
+const description = "Julian Jupiter Profile";
+const keywords = `${SITE_TITLE}, ${page}, ${SITE_KEYWORDS}`;
+const author = SITE_AUTHOR;
+
+const profilePhoto = "/assets/images/profile.jpg";
+const name = "Julian Jupiter";
+const position = "Senior Application Engineer";
+---
+
+<DefaultLayout
+  page={page}
+  title={title}
+  description={description}
+  keywords={keywords}
+  author={author}
+>
+  <section class="">
+    <figure
+      class="max-w-6xl mx-5 lg:mx-auto md:mx-5 sm:mx-5 rounded-xl border-2 border-gray-900 bg-sky-800 px-8 py-5 mb-12"
+      style="min-height:calc(100vh - 364px);"
+    >
+      <img
+        class="w-24 h-24 rounded-full mx-auto border-2 border-orange-500"
+        src={profilePhoto}
+        alt="Julian Jupiter Profile Photo"
+        width="384"
+        height="512"
+      />
+      <div class="pt-6 text-center space-y-4">
+        <blockquote>
+          <p class="text-xl text-gray-400 font-medium font-family-ubuntu">
+            “I'm a passionate software developer with several years of
+            experience in backend and frontend development using technologies
+            such as Java, Linux, SQL, JavaScript and a lot more.”
+          </p>
+        </blockquote>
+        <figcaption class="font-bold">
+          <div class="text-lg text-gray-700">
+            {name}
+          </div>
+          <div class="text-gray-800">
+            {position}
+          </div>
+        </figcaption>
+      </div>
+    </figure>
+  </section>
+</DefaultLayout>

@@ -1,0 +1,49 @@
+---
+import Disqus from "../components/Disqus.astro";
+import Head from "../components/Head.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Script from "../components/Script.astro";
+import "../styles/global.scss";
+
+export interface Props {
+  title: string;
+  description: string;
+  keywords: string;
+  author: string;
+  image: string;
+  path: string;
+}
+
+const { title, description, keywords, author, image, path } = Astro.props;
+const page = "blog";
+---
+
+<!doctype html>
+<html lang="en">
+  <Head title={title} description={description} keywords={keywords} author={author} image={image} />
+  <body class="bg-gray-900 text-white scrollbar scrollbar-thumb-gray-600">
+    <Header page={page} />
+    <main>
+      <slot />
+      <section class="py-5 text-center">
+        <!-- Horizontal Add Unit -->
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-1304584118292313"
+          data-ad-slot="2365016063"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script is:inline>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
+      <section class="max-w-6xl mx-5 lg:mx-auto md:mx-5 sm:mx-5 py-5 text-justify">
+        <Disqus path={path} />
+      </section>
+    </main>
+    <Footer />
+    <Script /> 
+  </body>
+</html>

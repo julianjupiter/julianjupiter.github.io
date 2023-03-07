@@ -1,0 +1,91 @@
+---
+import Button from "./Button.astro";
+---
+
+<h1 class="text-center text-5xl font-family-dm-serif-display text-gray-800">
+  Get in Touch
+</h1>
+<p
+  class="text-center text-3xl text-gray-100 font-medium font-family-ubuntu my-5"
+>
+  Want to work together or have any questions?
+</p>
+<div id="messageSuccess"
+  class="mb-4 rounded-lg bg-green-500 py-5 px-6 text-base text-green-900 border border-green-700"
+  role="alert" style="display:none;">
+  Your message has been sent!
+</div>
+<div id="messageError"
+  class="mb-4 rounded-lg bg-red-500 py-5 px-6 text-base text-red-900 border border-red-700"
+  role="alert" style="display:none;">
+  Please complete the form!
+</div>
+<form
+  class="grid"
+  name="gform"
+  id="gform"
+  enctype="text/plain"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSfN_MjC8dx6rQF9IqoCDo0rTTX29p1h6SV-tM7vfHFdjGSWmw/formResponse"
+  target="hidden_iframe"
+>
+  <label for="name">Name</label>
+  <input
+    type="text"
+    id="entry.680979585"
+    name="entry.680979585"
+    class="block w-full bg-transparent rounded-full border border-gray-300 focus:outline-none py-1 px-1.5 text-gray-100 mb-5"
+  />
+  <label for="email">Email</label>
+  <input
+    type="email"
+    id="entry.189441508"
+    name="entry.189441508"
+    class="block w-full bg-transparent rounded-full border border-gray-300 focus:outline-none py-1 px-1.5 text-gray-100 mb-5"
+  />
+  <label for="message">Message</label>
+  <textarea
+    id="entry.274042200"
+    name="entry.274042200"
+    class="block w-full bg-transparent rounded-0 border border-gray-300 focus:outline-none py-1 px-1.5 text-gray-100 mb-5"
+    rows="5"></textarea>
+  <Button
+    type="submit"
+    label="Say hello"
+    color="orange"
+    size="lg"
+    width="w-48"
+  />
+</form>
+<iframe id="gform-hidden-iframe" name="hidden_iframe" style="display:none;"
+></iframe>
+
+<script is:inline>
+  let submitted = false;
+  const gform = document.getElementById("gform");
+  const iframe = document.getElementById("gform-hidden-iframe");
+
+  gform.addEventListener("submit", (event) => {
+    const name = document.getElementById("entry.680979585").value;
+    const email = document.getElementById("entry.189441508").value;
+    const message = document.getElementById("entry.274042200").value;
+    if (name.length > 0 && email.length > 0 && message.length > 0) {
+      submitted = true;
+      return true;
+    } else {
+      event.preventDefault();
+      submitted = false;
+      toggleAlert("none", "block");
+      return false;
+    }
+  });
+  
+  iframe.onload = () => {
+    gform.reset();
+    toggleAlert("block", "none");
+  };
+
+  function toggleAlert(success, error) {
+    document.getElementById("messageSuccess").style.display = success;
+    document.getElementById("messageError").style.display = error;
+  }
+</script>
