@@ -63,7 +63,8 @@ const blogs = (await getCollection("blog")).sort(
     <h1 class="font-bold text-gray-400 text-center text-3xl pb-12">
       Latest Blogs
     </h1>
-    {blogs.slice(0, 6).map((post) => <LatestPost post={post} />)}
+    {blogs.slice(0, 5).map((post) => <LatestPost post={post} />)}
+    {(blogs.length > 5) &&
     <div class="flex flex-wrap mb-6">
       <div
         class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3 mb-6 md:mb-0 mx-auto text-center"
@@ -79,6 +80,7 @@ const blogs = (await getCollection("blog")).sort(
         </a>
       </div>
     </div>
+  }
   </section>
   <section
     id="contact"
