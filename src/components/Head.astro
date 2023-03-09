@@ -10,9 +10,10 @@ export interface Props {
   image?: string;
 }
 
-const favicon = "/assets/images/favicon.png";
-const { title, description, keywords, author, image = favicon } = Astro.props;
+const site = Astro.site;
 const url = Astro.url;
+const favicon = `${site}assets/images/favicon.png`;
+const { title, description, keywords, author, image = favicon } = Astro.props;
 const canonicalUrl = new URL(url.pathname, Astro.site);
 const imageUrl = new URL(image, url);
 ---
