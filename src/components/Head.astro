@@ -11,13 +11,7 @@ export interface Props {
 }
 
 const favicon = "/assets/images/favicon.png";
-const {
-  title,
-  description,
-  keywords,
-  author,
-  image = favicon
-} = Astro.props;
+const { title, description, keywords, author, image = favicon } = Astro.props;
 const url = Astro.url;
 const canonicalUrl = new URL(url.pathname, Astro.site);
 const imageUrl = new URL(image, url);
@@ -45,12 +39,8 @@ const imageUrl = new URL(image, url);
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content={Astro.url} />
-  <meta property="og:title" property="og:title" content={title} />
-  <meta
-    property="og:description"
-    property="og:description"
-    content={description}
-  />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
   <meta property="og:site_name" content={SITE_TITLE} />
   <meta property="og:image" content={imageUrl} />
 
