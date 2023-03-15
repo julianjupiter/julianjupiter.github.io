@@ -10,6 +10,9 @@ import {
   TWITTER_URL,
   REDDIT_URL,
   QUORA_URL,
+PROFILE_PHOTO,
+PROFILE_POSITION,
+PROFILE_NAME,
 } from "../consts";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
@@ -18,10 +21,6 @@ const title = SITE_TITLE + " - Profile";
 const description = "Julian Jupiter Profile";
 const keywords = `${SITE_TITLE}, ${page}, ${SITE_KEYWORDS}`;
 const author = SITE_AUTHOR;
-
-const profilePhoto = "/assets/images/profile.jpg";
-const name = "Julian Jupiter";
-const position = "Senior Application Engineer";
 ---
 
 <DefaultLayout
@@ -38,14 +37,14 @@ const position = "Senior Application Engineer";
     >
       <img
         class="w-60 h-60 rounded-full mx-auto border-2 border-gray-100 align-middle"
-        src={profilePhoto}
+        src={PROFILE_PHOTO}
         alt="Julian Jupiter Profile Photo"
       />
       <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
         <figcaption class="font-bold">
-          <h5 class="text-gray-300">{position}</h5>
+          <h5 class="text-gray-300">{PROFILE_POSITION}</h5>
           <h2 class="text-gray-100 uppercase">
-            {name}
+            {PROFILE_NAME}
           </h2>
         </figcaption>
         <blockquote>
