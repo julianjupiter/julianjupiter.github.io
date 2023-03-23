@@ -4,7 +4,7 @@ description: Since Java 8, lambda expressions have been supported via functional
 tags: [Java, Functional Interface, Lambdas, Lambda Expressions]
 keywords: java, functional interface, lambdas, lambda expressions
 author: Julian Jupiter
-date: 2023-03-17
+date: 2023-03-23
 slug: functional-interfaces-lambda-expressions-and-method-references-in-java
 categories:
 image:
