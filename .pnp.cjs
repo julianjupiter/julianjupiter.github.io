@@ -30,6 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@astrojs/sitemap", "npm:1.1.0"],\
             ["@astrojs/tailwind", "virtual:e41439419f210196aedfc040d9fee1e5b9058d5de0e84f96f851c182a01f2cbcab59f61b07cd03a219f6b0fdc61df728adfb71811df437cc81db708a56c8157b#npm:3.0.1"],\
+            ["@tailwindcss/typography", "virtual:e41439419f210196aedfc040d9fee1e5b9058d5de0e84f96f851c182a01f2cbcab59f61b07cd03a219f6b0fdc61df728adfb71811df437cc81db708a56c8157b#npm:0.5.9"],\
             ["astro", "npm:2.0.17"],\
             ["sass", "npm:1.58.3"],\
             ["tailwind-scrollbar", "virtual:e41439419f210196aedfc040d9fee1e5b9058d5de0e84f96f851c182a01f2cbcab59f61b07cd03a219f6b0fdc61df728adfb71811df437cc81db708a56c8157b#npm:2.1.0"],\
@@ -911,6 +912,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@proload/core", "npm:0.3.3"],\
             ["deepmerge", "npm:4.3.0"],\
             ["escalade", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tailwindcss/typography", [\
+        ["npm:0.5.9", {\
+          "packageLocation": "./.yarn/cache/@tailwindcss-typography-npm-0.5.9-c16859b9da-b98e21bdd1.zip/node_modules/@tailwindcss/typography/",\
+          "packageDependencies": [\
+            ["@tailwindcss/typography", "npm:0.5.9"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:e41439419f210196aedfc040d9fee1e5b9058d5de0e84f96f851c182a01f2cbcab59f61b07cd03a219f6b0fdc61df728adfb71811df437cc81db708a56c8157b#npm:0.5.9", {\
+          "packageLocation": "./.yarn/__virtual__/@tailwindcss-typography-virtual-72210ca4b2/0/cache/@tailwindcss-typography-npm-0.5.9-c16859b9da-b98e21bdd1.zip/node_modules/@tailwindcss/typography/",\
+          "packageDependencies": [\
+            ["@tailwindcss/typography", "virtual:e41439419f210196aedfc040d9fee1e5b9058d5de0e84f96f851c182a01f2cbcab59f61b07cd03a219f6b0fdc61df728adfb71811df437cc81db708a56c8157b#npm:0.5.9"],\
+            ["@types/tailwindcss", null],\
+            ["lodash.castarray", "npm:4.4.0"],\
+            ["lodash.isplainobject", "npm:4.0.6"],\
+            ["lodash.merge", "npm:4.6.2"],\
+            ["postcss-selector-parser", "npm:6.0.10"],\
+            ["tailwindcss", "virtual:e41439419f210196aedfc040d9fee1e5b9058d5de0e84f96f851c182a01f2cbcab59f61b07cd03a219f6b0fdc61df728adfb71811df437cc81db708a56c8157b#npm:3.2.7"]\
+          ],\
+          "packagePeers": [\
+            "@types/tailwindcss",\
+            "tailwindcss"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2994,6 +3021,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["julianjupiter.github.io", "workspace:."],\
             ["@astrojs/sitemap", "npm:1.1.0"],\
             ["@astrojs/tailwind", "virtual:e41439419f210196aedfc040d9fee1e5b9058d5de0e84f96f851c182a01f2cbcab59f61b07cd03a219f6b0fdc61df728adfb71811df437cc81db708a56c8157b#npm:3.0.1"],\
+            ["@tailwindcss/typography", "virtual:e41439419f210196aedfc040d9fee1e5b9058d5de0e84f96f851c182a01f2cbcab59f61b07cd03a219f6b0fdc61df728adfb71811df437cc81db708a56c8157b#npm:0.5.9"],\
             ["astro", "npm:2.0.17"],\
             ["sass", "npm:1.58.3"],\
             ["tailwind-scrollbar", "virtual:e41439419f210196aedfc040d9fee1e5b9058d5de0e84f96f851c182a01f2cbcab59f61b07cd03a219f6b0fdc61df728adfb71811df437cc81db708a56c8157b#npm:2.1.0"],\
@@ -3063,6 +3091,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["locate-path", "npm:6.0.0"],\
             ["p-locate", "npm:5.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.castarray", [\
+        ["npm:4.4.0", {\
+          "packageLocation": "./.yarn/cache/lodash.castarray-npm-4.4.0-f3706198e9-fca8c7047e.zip/node_modules/lodash.castarray/",\
+          "packageDependencies": [\
+            ["lodash.castarray", "npm:4.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isplainobject", [\
+        ["npm:4.0.6", {\
+          "packageLocation": "./.yarn/cache/lodash.isplainobject-npm-4.0.6-d73937742f-29c6351f28.zip/node_modules/lodash.isplainobject/",\
+          "packageDependencies": [\
+            ["lodash.isplainobject", "npm:4.0.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.merge", [\
+        ["npm:4.6.2", {\
+          "packageLocation": "./.yarn/cache/lodash.merge-npm-4.6.2-77cb4416bf-ad580b4bdb.zip/node_modules/lodash.merge/",\
+          "packageDependencies": [\
+            ["lodash.merge", "npm:4.6.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4376,6 +4431,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["postcss-selector-parser", [\
+        ["npm:6.0.10", {\
+          "packageLocation": "./.yarn/cache/postcss-selector-parser-npm-6.0.10-a4d7aaa270-46afaa60e3.zip/node_modules/postcss-selector-parser/",\
+          "packageDependencies": [\
+            ["postcss-selector-parser", "npm:6.0.10"],\
+            ["cssesc", "npm:3.0.0"],\
+            ["util-deprecate", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:6.0.11", {\
           "packageLocation": "./.yarn/cache/postcss-selector-parser-npm-6.0.11-b2f8bf39d3-0b01aa9c2d.zip/node_modules/postcss-selector-parser/",\
           "packageDependencies": [\
