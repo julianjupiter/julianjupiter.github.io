@@ -9,7 +9,7 @@ const blog = defineCollection({
     author: z.string(),
     date: z.date(),
     image: z.object({
-      thumbnail: z.string()
+      cover: z.string()
     })
   }),
 });
