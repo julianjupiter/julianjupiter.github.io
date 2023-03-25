@@ -9,8 +9,6 @@ slug: restful-web-service-api-with-spring-boot-and-spring-mvc
 categories:
 image:
   cover: /assets/images/blog/restful-web-service-api-with-spring-boot-and-spring-mvc/cover.png
-  og: /assets/images/blog/restful-web-service-api-with-spring-boot-and-spring-mvc/cover.png
-  thumbnail: /assets/images/blog/restful-web-service-api-with-spring-boot-and-spring-mvc/thumbnail.png
 ---
 
 ## Introduction

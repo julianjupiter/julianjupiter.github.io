@@ -8,9 +8,7 @@ date: 2019-08-12
 slug: how-to-create-maven-and-gradle-wrapper
 categories:
 image:
-  cover: /assets/images/blog/how-to-create-maven-and-gradle-wrapper/cover.JPG
-  og:
-  thumbnail: /assets/images/blog/how-to-create-maven-and-gradle-wrapper/thumbnail.png
+  cover: /assets/images/blog/how-to-create-maven-and-gradle-wrapper/cover.png
 ---
 
 ### Overview

@@ -9,8 +9,6 @@ slug: functional-interfaces-lambda-expressions-and-method-references-in-java
 categories:
 image:
   cover: /assets/images/blog/functional-interfaces-lambda-expressions-and-method-references-in-java/cover.png
-  og: /assets/images/blog/functional-interfaces-lambda-expressions-and-method-references-in-java/cover.png
-  thumbnail: /assets/images/blog/functional-interfaces-lambda-expressions-and-method-references-in-java/thumbnail.png
 ---
 
 ## Introduction

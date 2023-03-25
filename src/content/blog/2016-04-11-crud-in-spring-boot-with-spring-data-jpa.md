@@ -9,8 +9,6 @@ slug: crud-in-spring-boot-with-spring-data-jpa
 categories:
 image:
   cover: /assets/images/blog/crud-in-spring-boot-with-spring-data-jpa/cover.png
-  og: /assets/images/blog/crud-in-spring-boot-with-spring-data-jpa/cover.png
-  thumbnail: /assets/images/blog/crud-in-spring-boot-with-spring-data-jpa/thumbnail.png
 ---
 
 Tutorial about CRUD operations in Spring Boot with Spring Data JPA. Application developed in this tutorial performs adding, editing, updating and deleting contacts.

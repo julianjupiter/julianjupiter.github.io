@@ -8,9 +8,7 @@ date: 2019-07-06
 slug: java-8-new-language-features
 categories:
 image:
-  cover: 
-  og: 
-  thumbnail: /assets/images/blog/java-8-new-language-features/thumbnail.png
+  cover: /assets/images/blog/java-8-new-language-features/cover.png
 ---
 
 ### Overview

@@ -9,8 +9,6 @@ slug: step-by-step-installation-of-ubuntu-server-16-04-lts
 categories:
 image:
   cover: /assets/images/blog/step-by-step-installation-of-ubuntu-server-16-04-lts/cover.png
-  og: /assets/images/blog/step-by-step-installation-of-ubuntu-server-16-04-lts/cover.png
-  thumbnail: /assets/images/blog/step-by-step-installation-of-ubuntu-server-16-04-lts/thumbnail.png
 ---
 
 First, download the current version of **[Ubuntu Server](http://www.ubuntu.com)**. Currently, it's **16.04 LTS** (always choose an LTS version). A 64-bit version is recommended. A 32-bit version is available though.

@@ -8,9 +8,7 @@ date: 2015-11-28
 slug: simple-spring-mvc-application-with-java-configuration
 categories:
 image:
-  cover: /assets/images/blog/simple-spring-mvc-application-with-java-configuration/cover.PNG
-  og: /assets/images/blog/simple-spring-mvc-application-with-java-configuration/cover.PNG
-  thumbnail: /assets/images/blog/simple-spring-mvc-application-with-java-configuration/thumbnail.png
+  cover: /assets/images/blog/simple-spring-mvc-application-with-java-configuration/cover.png
 ---
 
 ## Introduction

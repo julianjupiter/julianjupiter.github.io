@@ -9,8 +9,6 @@ slug: jdk-15-the-new-features-in-java-15
 categories:
 image:
   cover: /assets/images/blog/jdk-15-the-new-features-in-java-15/cover.png
-  og: /assets/images/blog/jdk-15-the-new-features-in-java-15/cover.png
-  thumbnail: /assets/images/blog/jdk-15-the-new-features-in-java-15/thumbnail.png
 ---
 
 **Java 15 General Availability (GA)** has been released today, September 15, 2020.
