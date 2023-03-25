@@ -8,7 +8,7 @@ date: 2019-08-31
 slug: java-web-application-with-embedded-tomcat
 categories:
 image:
-  cover: /assets/images/blog/java-web-application-with-embedded-tomcat/cover.png
+  cover: /assets/images/blog/java-web-application-with-embedded-tomcat/cover.PNG
 ---
 
 ## Purpose

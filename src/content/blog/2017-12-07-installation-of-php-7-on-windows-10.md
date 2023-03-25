@@ -8,7 +8,7 @@ date: 2017-12-07
 slug: installation-of-php-7-on-windows-10
 categories:
 image:
-  cover: /assets/images/blog/installation-of-php-7-on-windows-10/cover.png
+  cover: /assets/images/blog/installation-of-php-7-on-windows-10/cover.PNG
 ---
 
 This is a step-by-step setup of PHP 7 on Windows 10.
