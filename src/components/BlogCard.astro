@@ -5,38 +5,53 @@ const url = Astro.site;
 const disqusIdentifier = `/blog/${post.slug}`;
 const path = `${url}blog/${post.slug}`;
 const date = post.data.date;
-const year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date);
-const month = new Intl.DateTimeFormat('en', { month: 'long' }).format(date);
-const day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(date);
+const year = new Intl.DateTimeFormat("en", { year: "numeric" }).format(date);
+const month = new Intl.DateTimeFormat("en", { month: "long" }).format(date);
+const day = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(date);
 const formattedDate = `${month} ${day}, ${year}`;
 ---
 
-<div class="card bg-gray-700 rounded-xl">
+<div class="bg-gray-700 rounded-xl">
   <div
-      class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-t-lg mb-6"
-    >
-      <img src={postData.image.cover} class="w-full" alt={postData.title} />
-      <a href="#!">
-        <div
-          class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-          style="background-color: rgba(251, 251, 251, 0.2)"
-        >
-        </div>
-      </a>
-    </div>
-  <div class="card-body p-3 h-64 relative block text-left">
+    class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-t-lg mb-6"
+  >
+    <img src={postData.image.cover} class="w-full" alt={postData.title} />
+    <a href="#!">
+      <div
+        class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
+        style="background-color: rgba(251, 251, 251, 0.2)"
+      >
+      </div>
+    </a>
+  </div>
+  <div
+    class="p-3 relative block text-left"
+    style="min-height: 16rem;"
+  >
     <a
       href={path}
       class="card-title text-2xl text-gray-400 hover:text-orange-600 font-family-dm-serif-display"
       >{postData.title}</a
     >
-    <p class="my-3"><small>Published: {formattedDate} by <span class="text-orange-500">{postData.author}</span></small></p>
+    <p class="my-3">
+      <small
+        >Published: {formattedDate} by <span class="text-orange-500"
+          >{postData.author}</span
+        >
+      </small>
+    </p>
     <p class="card-text text-gray-200">
       {postData.description}
     </p>
-    <div class="absolute bottom-3 flex"><span class="material-symbols-outlined mb-auto mr-2 text-gray-200"> comment</span> <span class="text-gray-200">
-      <a href={`${path}#disqus_thread`} data-disqus-identifier={disqusIdentifier}></a>
-      </span>
-    </div>    
+  </div>
+  <div class="p-3 flex">
+    <span class="material-symbols-outlined mb-auto mr-2 text-gray-200">
+      comment</span
+    >
+    <span class="text-gray-200">
+      <a
+        href={`${path}#disqus_thread`}
+        data-disqus-identifier={disqusIdentifier}></a>
+    </span>
   </div>
 </div>
